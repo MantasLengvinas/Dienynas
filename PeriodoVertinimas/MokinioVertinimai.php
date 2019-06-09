@@ -21,45 +21,8 @@
 </select></div>
 
 <div class="c_block padLess borderless">
-    <div class="c_table_container">
-        <table class="c_main_table wrap_text left" style="width: 200px;">
-            <colgroup>
-                <col class="fixed" width="200">
-                
-                
-                    
-            </colgroup>
-            <thead class="grey bold">
-                <tr style="height: 43px;">
-                    <th class="fixed">Dalykas / mokytojas</th>
-                    
-                    
-                        
-                </tr>
-            </thead>
-            <tbody id="st-response">
-                    
-            </tbody>
-        </table>
-        <div class="left slider_holder" id="slenkanti_dalis" style="width: 565px; height: 884px;"><table class="c_main_table wrap_text left">
-            <colgroup>
-                
-                <col width="600">
-                <col width="50">
-                    <col width="50">
-            </colgroup>
-            <thead class="grey bold">
-                <tr style="height: 43px;">
-                    
-                    <th>Pažymiai</th>
-                    <th>Vidurkis</th>
-                        <th>Pagr.</th>
-                </tr>
-            </thead>
-            <tbody id="table-response">
-                    
-            </tbody>
-        </table></div><br class="clear">
+    <div class="c_table_container" id="table-response">
+
     </div>
 </div> 
 </div>
@@ -71,19 +34,6 @@
 ?>
 
 <script>
-
-        
-        let loadST = () => {
-        
-                let url = "../API/loadST.php";
-                
-                $.get({
-                     url: url   
-                })
-                .done(function(data){
-                        $("#st-response").html(data);
-                })
-        }
         
         let loadTable = (id) => {
            
@@ -106,7 +56,7 @@
         });
         
         $(document).ready(function(){
-                loadST();
+                //loadST();
                 loadTable(2);
         });
         
