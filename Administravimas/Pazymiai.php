@@ -226,12 +226,11 @@ $types = array('Kontrolinis darbas', 'Savarankiškas darbas', 'Klasės darbas', 
   position: relative;
   z-index: 1; /* Sit on top */
   position: absolute;
-  top:  50%;
+  top: 10%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%);*/
   width: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  
 }
 .modal.show{
    display: block;
