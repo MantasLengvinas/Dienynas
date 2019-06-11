@@ -1,11 +1,15 @@
-<?php include_once 'config/init.php'; ?>
+<html class="" lang="en-US"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1360, initial-scale=0.1, maximum-scale=1">
 
-<?php
+<title>TAMO</title>
 
-$user = new User();
+</head>
 
-$template = new Template('templates/login.php');
+<body>
 
-$template->title = 'Login page';
+<script type="text/javascript">
+    window.location = "Prisijungimas/Login";
+</script>
 
-echo $template;
+</body></html>

@@ -2,40 +2,88 @@
 
 class User{
     private $db;
-    private $err;
-    private $stmt;
+    private $role;
 
     public function __construct(){
         $this->db = new Database;
     }
 
-    public function verify(){
-        $username = $mysqli->escape_string($_POST['username']);
-        $this->stmt = $this->db->query("SELECT username FROM users WHERE username='$username'");
-
-        if ( $this->stmt->num_rows == 0 ){ // User doesn't exist
-            $err = "User with that email doesn't exist!";
-            return $err;
+    public function roleTitle($role){
+        switch($role){
+            case '0':
+                return 'Mokinys';
+            break;
+            case '1':
+                return 'Administratorius';
+            break;   
+            default:
+                return 'undefined'; 
         }
-        else{
-            
-            $user = $this->db->single();
+    }
 
-            if ( password_verify($_POST['password'], $user['password']) ) {
-        
-                $_SESSION['username'] = $user['username'];
-                $_SESSION['firstname'] = $user['firstname'];
-                $_SESSION['lastname'] = $user['lastname'];
-                $_SESSION['school'] = $user['school'];
-                $_SESSION['role'] = $user['role'];
+    public function Login($username, $password){
+
+        try{
+            $hashed_password = md5($password);
+
+            $this->db->query("SELECT * FROM users WHERE username=:un AND password = :pass");
+            $this->db->bind('un', $username);
+            $this->db->bind('pass', $hashed_password);
+            $this->db->execute();
+
+            $count= $this->db->rowCount();
+            $data = $this->db->getSingle();
+
+            if ($count != 0 ){
+
+                $_SESSION['username'] = $data->username;
+                $_SESSION['firstname'] = $data->firstname;
+                $_SESSION['lastname'] = $data->lastname;
+                $_SESSION['school'] = $data->school;
+                $this->role = $data->role;
+                $_SESSION['role'] = $this->roleTitle($this->role);
                 
                 // This is how we'll know the user is logged in
                 $_SESSION['logged_in'] = true;
+                return true;
             }
-            else {
-                $err = "You have entered wrong password, try again!";
-                return $err;
+            else{
+                return false;
             }
         }
+        catch(PDOException $e){
+            echo $e->getMessage();
+        }
     }
+
+    public function checkAdmin(){
+        if($this->role == 1){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function getAllMarks(){
+        $this->db->query("SELECT * FROM marks WHERE student_username=:username ORDER BY uploaded DESC");
+        $this->db->bind('username', $_SESSION['username']);
+        $this->db->execute();
+
+        $data = $this->db->getAll();
+
+        return $data;
+
+    }
+
+    public function getAllSubjects(){
+        $this->db->query("SELECT * FROM subjects WHERE student_username=:username");
+        $this->db->bind('username', $_SESSION['username']);
+        $this->db->execute();
+
+        $data = $this->db->getAll();
+
+        return $data;
+
+    }    
 }

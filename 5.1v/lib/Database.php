@@ -56,13 +56,18 @@ class Database{
         return $this->stmt->execute();
     }
 
-    public function resultSet(){
+    public function getAll(){
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function single(){
+    public function getSingle(){
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_OBJ);
+    }
+
+    public function rowCount(){
+        $this->execute();
+        return $this->stmt->rowCount();
     }
 }
