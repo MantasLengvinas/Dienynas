@@ -123,4 +123,27 @@ class User{
 
         return $data;
     }
+
+    public function createUser($username, $firstname, $lastname, $email, $password, $school, $role){
+        $this->db->query("INSERT INTO users (firstname, lastname, username, email, password, school, role) VALUES (:firstname, :lastname, :username, :email, :password, :school, :role)");
+        $hashed_password = md5($password);
+        $this->db->bind("firstname", $firstname);
+        $this->db->bind("lastname", $lastname);
+        $this->db->bind("username", $username);
+        $this->db->bind("email", $email);
+        $this->db->bind("password", $hashed_password);
+        $this->db->bind("school", $school);
+        $this->db->bind("role", $role);
+        $this->db->execute();
+
+        return 'Vartotojas sėkmingai sukurtas!';
+    }
+
+    public function deleteUser($id){
+        $this->db->query("DELETE FROM users WHERE id = :id");
+        $this->db->bind('id', $id);
+        $this->db->execute();
+
+        return 'Vartotojas sėkmingai ištrintas';
+    }
 }

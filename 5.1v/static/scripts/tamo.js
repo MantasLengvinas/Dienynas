@@ -1,3 +1,16 @@
+//Front end functions
+
+function showModal(){
+    var modal = document.getElementById('myModal');
+    modal.classList.toggle('show');
+}
+
+function reload(){
+    setTimeout(function() {
+        location.reload();
+      }, 3000);
+}
+
 //Admin requests
 
 let users = (id) =>{
@@ -65,6 +78,54 @@ let moreInfo = id =>{
            showModal();
          }
     })
+}
+
+let createUser = () =>{
+    let username = $("#username").val();
+    let firstname = $("#firstname").val();
+    let lastname = $("#lastname").val();
+    let email = $("#email").val();
+    let password = $("#password").val();
+    let school = $("#school").val();
+    let role = $("#role").val();
+
+    let data = {
+        username: username, 
+        firstname: firstname, 
+        lastname: lastname,
+        email: email, 
+        password: password,
+        school: school,
+        role: role
+    };
+
+    $.ajax({
+        type: 'POST',
+        data: data, 
+        url: '../Admin/createUser.php'
+    })
+    .done(function(data){
+        $("#user-response").html(data);
+        reload();
+    })
+}
+
+let deleteUser = (id) =>{
+
+    var con = confirm("Vartotojas bus ištrintas");
+
+    if(con){
+        $.ajax({
+            type: 'POST',
+            data: {id: id}, 
+            url: '../Admin/deleteUser.php'
+        })
+        .done(function(data){
+            $("#user-response").html(data);
+            showModal();
+            reload();
+        })
+    }
 }
 
 //User requests
