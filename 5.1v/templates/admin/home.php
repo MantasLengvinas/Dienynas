@@ -3,8 +3,6 @@
     include_once '../../inc/menu.php';
 ?>
 
-<script src="../static/scripts/tamo.js"></script>
-
 <!-- Body section -->
 
         <div id="c_main">

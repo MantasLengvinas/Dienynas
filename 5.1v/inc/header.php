@@ -1,4 +1,8 @@
-<?php include_once '../../config/init.php'; ?>
+<?php 
+    if(!$_SESSION['logged_in']){
+        header("Location: /?logged_in=false");
+    }
+?>
 
 <!DOCTYPE html>
 <html class="op"><head>
@@ -27,6 +31,8 @@
 
     <script src="../static/scripts/jquery.js"></script>
     <script src="../static/scripts/jquery.ui.js"></script>
+    <script src="../static/scripts/tamo.js"></script>
+    <script src="../static/scripts/writeMarks.js"></script>
 </head>
 
 <body class="container">

@@ -17,19 +17,33 @@
             <thead><tr>
                 <td style="width: 100px;">Vartotojo vardas</td>
                 <td style="width: 200px;">Mokykla</td>
-                <td style="width: 120px;">Privilegijos</td>
+                <td style="width: 120px;">Statusas</td>
             </tr></thead>
             <tbody>
                 <tr>
                     <td><?=$data[0]->username?></td>
                     <td><?=$data[0]->school?></td>
-                    <td><?=$data[0]->role?></td>
+                    <td><?=$role?></td>
                 </tr>    
             </tbody>
         </table>
     </div>
           
-          
+    <?php if(sizeof($data[2]) == 0){
+        echo '<div style="margin: 10px 0 10px 0;">
+                <div style="height: 15px;">
+                    <label style=""><b>Šis vartotojas neturi mokomųjų dalykų!</b></label>
+                </div>     
+             </div>';
+    }
+    if(sizeof($data[1]) == 0){
+        echo '<div style="margin: 10px 0 10px 0;">
+                <div style="height: 15px;">
+                    <label style=""><b>Šis vartotojas neturi pažymių!</b></label>
+                </div>     
+             </div>';
+    }else {?>
+
     <div style="margin: 10px 0 10px 0;">
        <div style="height: 15px;">
           <label style="float: left;"><b>Pažymiai</b></label>
@@ -70,4 +84,4 @@
 <div class="right">
     <!-- <a class="btn c_btn" id="closeModalBtn"><span>Uždaryti</span></a>-->
 </div>
-</div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div>
+    </div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div><?php }?>

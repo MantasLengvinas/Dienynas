@@ -5,6 +5,9 @@
     $user = new User();
 
     $template->users = $user->getAllUsers();
+    foreach($template->users as $u){
+        $u->role = $user->roleTitle($u->role);
+    }
 
     echo $template;
 ?>

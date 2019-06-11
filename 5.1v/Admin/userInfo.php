@@ -7,6 +7,8 @@
     $user = new User();
 
     $template->data = $user->getUserData($id);
+    $roleid = $template->data[0]->role;
+    $template->role = $user->roleTitle($roleid);
 
     echo $template;
 ?>

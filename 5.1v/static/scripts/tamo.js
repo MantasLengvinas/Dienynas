@@ -1,3 +1,5 @@
+//Admin requests
+
 let users = (id) =>{
     document.getElementById('loader').classList.remove('hidden');
     $('html').css('opacity', '0.6');
@@ -63,4 +65,67 @@ let moreInfo = id =>{
            showModal();
          }
     })
+}
+
+//User requests
+
+let monthInfo = [
+    [0, 'Pr', 'An', 'Tr', 'Kt', 'Pn', 'Št', 'Sk'],
+    [0, 'SAUSIS', 'VASARIS', 'KOVAS', 'BALANDIS', 
+    'GEGUŽĖ', 'BIRŽELIS', 'LIEPA', 'RUGPJŪTIS', 
+    'RUGSĖJIS', 'SPALIS', 'LAPKRITIS', 'GRUODIS']
+];
+
+let loadTable = (id) =>{
+    document.getElementById('loader').classList.remove('hidden');
+    $('html').css('opacity', '0.6');
+    $('.date_selector div').removeClass('date_active');
+    $(id).parent().addClass('date_active');
+    let metai = $(id).data('metai');
+    let menuo = $(id).data('menuo');
+    let data = {metai: metai, menuo: menuo, info: monthInfo};
+    let url = '../Pamoka/DienynasTable';
+
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: data
+    })
+    .done(function(data){
+        $('#timetable_content').html(data);
+        //loadMarks(id);
+        document.getElementById('loader').classList.add('hidden');
+        $('html').css('opacity', '1');
+        scrollTimeTable(metai, menuo);
+    });
+}
+
+let loadMarks = (id) =>{
+    let metai = $(id).data('metai');
+    let menuo = $(id).data('menuo');
+    let data = {metai: metai, menuo: menuo, info: monthInfo};
+    let url = '../Pamoka/DienynasMarks';
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: data,
+        dataType: 'JSON'
+    })
+    .done(function(data){
+        writeMarks(data); 
+        document.getElementById('loader').classList.add('hidden');
+        $('html').css('opacity', '1');
+    });
+}
+
+let scrollTimeTable = (metai, menuo) => {
+    var date = new Date();
+    let thisMonth = date.getMonth() + 1;
+    let thisYear = date.getFullYear();
+        var today_year = thisYear;
+        var today_month =  thisMonth;
+        var today_day = date.getDate();
+        if(metai == today_year && menuo==today_month){
+            $("#scrollable_dienynas").scrollLeft(28*(today_day - 16));
+        }
 }
