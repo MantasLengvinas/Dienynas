@@ -5,6 +5,13 @@
 $template = new Template('../templates/admin/home.php');
 $user = new User();
 
-$template->users = $user->getAllUsers();
+$template->school = $_SESSION['school'];
+$template->firstname = $_SESSION['firstname'];
+$template->lastname = $_SESSION['lastname'];
+$template->role = $_SESSION['role'];
+
+//$template->logout = $user->Logout();
+
+//$template->users = $user->getAllUsers();
 
 echo $template;
