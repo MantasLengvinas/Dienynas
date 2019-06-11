@@ -65,6 +65,8 @@ class User{
         }
     }
 
+    //User functions
+
     public function getAllMarks(){
         $this->db->query("SELECT * FROM marks WHERE student_username=:username ORDER BY uploaded DESC");
         $this->db->bind('username', $_SESSION['username']);
@@ -85,5 +87,27 @@ class User{
 
         return $data;
 
-    }    
+    } 
+    
+    //Admin functions
+
+    public function getAllUsers(){
+        $this->db->query("SELECT * FROM users ORDER BY id DESC");
+        $this->db->execute();
+
+        $data = $this->db->getAll();
+
+        return $data;
+
+    }
+
+    public function getUserData($username){
+        $this->db->query("SELECT * FROM users WHERE username = :username");
+        $this->db->bind('username', $username);
+        $this->db->execute();
+
+        $data = $this->db->getAll();
+
+        return $data;
+    }
 }

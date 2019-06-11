@@ -16,8 +16,13 @@ if (!empty($_POST['loginSubmit'])) {
     if(strlen(trim($username)) > 1 && strlen(trim($password)) > 1 ){
         $uid = $user->Login($username, $password);
         if($uid){
-            $url = 'Naujienos?clickMode=true';
-            header("Location: $url");
+            if($_SESSION['role'] == 'Administratorius'){
+                $url = '../Admin/Home?clickMode=true';
+                header("Location: $url");
+            }else{
+                $url = 'Naujienos?clickMode=true';
+                header("Location: $url");
+            }
         }
         else{
             $template->errorMsgLogin = "Please check login details.";
