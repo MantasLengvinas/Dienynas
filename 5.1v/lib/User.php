@@ -60,7 +60,7 @@ class User{
         session_unset();
         session_destroy();
 
-        header("Location: ../Prisijungimas/Login");
+        header("Location: ../Prisijungimas/Login?logout=true");
     }
 
     public function checkAdmin(){

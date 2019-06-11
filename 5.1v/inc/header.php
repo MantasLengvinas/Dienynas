@@ -143,7 +143,7 @@
                                                         </div>
                                                     </a>
 
-                                                <a href="javascript:void(0)" onclick="">
+                                                <a href="../Prisijungimas/logout.php" onclick="">
                                                     <div class="c_select_options_item">
                                                             <i class="fa fa-lock fa-2x fa-fw icon_red" aria-hidden="true"></i>
                                                             <span class="role_title">Atsijungti</span>

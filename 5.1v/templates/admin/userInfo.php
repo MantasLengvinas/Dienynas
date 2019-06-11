@@ -43,7 +43,7 @@
     }else{
         echo '<div style="margin: 10px 0 10px 0;">
         <div style="height: 15px;">
-           <label style="float: left;"><b>Dalykai</b></label>
+           <label style="float: left;"><b>Dalykai ('.sizeof($marks).')</b></label>
         </div>     
      </div>
  
@@ -72,7 +72,7 @@
     }else {?>
     <div style="margin: 10px 0 10px 0;">
        <div style="height: 15px;">
-          <label style="float: left;"><b>Pažymiai</b></label>
+          <label style="float: left;"><b>Pažymiai (<?=sizeof($marks)?>)</b></label>
        </div>     
     </div>
     
