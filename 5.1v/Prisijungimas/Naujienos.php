@@ -3,7 +3,6 @@
 <?php 
 
 $template = new Template('../templates/user/naujienos.php');
-$user = new User();
 
 $template->school = $_SESSION['school'];
 $template->firstname = $_SESSION['firstname'];

@@ -2,11 +2,12 @@
 
 <?php
 
-$user = new User;
+$m = new Mark;
+$s = new Subject;
 $template = new Template('../templates/user/Pamoka/MokinioDienynas.php');
 
-$template->marks = $user->getAllMarks($_SESSION['username']);
-$template->subjects = $user->getAllSubjects($_SESSION['username']);
+$template->marks = $m->getAllMarks($_SESSION['username']);
+$template->subjects = $s->getAllSubjects($_SESSION['username']);
 
 $template->school = $_SESSION['school'];
 $template->firstname = $_SESSION['firstname'];

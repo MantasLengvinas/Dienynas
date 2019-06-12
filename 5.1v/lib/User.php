@@ -1,11 +1,15 @@
 <?php 
 
 class User{
-    private $db;
+    private $db; //db class
+    private $m; //mark class
+    private $s; //subject class
     private $role;
 
     public function __construct(){
         $this->db = new Database;
+        $this->m = new Mark;
+        $this->s = new Subject;
     }
 
     public function roleTitle($role){
@@ -71,30 +75,6 @@ class User{
             return false;
         }
     }
-
-    //User functions
-
-    public function getAllMarks($username){
-        $this->db->query("SELECT * FROM marks WHERE student_username=:username ORDER BY uploaded DESC");
-        $this->db->bind('username', $username);
-        $this->db->execute();
-
-        $data = $this->db->getAll();
-
-        return $data;
-
-    }
-
-    public function getAllSubjects($username){
-        $this->db->query("SELECT * FROM subjects WHERE student_username=:username");
-        $this->db->bind('username', $username);
-        $this->db->execute();
-
-        $data = $this->db->getAll();
-
-        return $data;
-
-    } 
     
     //Admin functions
 
@@ -114,26 +94,14 @@ class User{
         $this->db->execute();
 
         $user = $this->db->getSingle();
-        $marks = $this->getAllMarks($user->username);
-        $subjects = $this->getAllSubjects($user->username);
+        $marks = $this->m->getAllMarks($user->username);
+        $subjects = $this->s->getAllSubjects($user->username);
 
         $data = array(
             $user, $marks, $subjects
         );
 
         return $data;
-    }
-
-    public function deleteMarks($username){
-        $this->db->query("DELETE FROM marks WHERE student_username = :username");
-        $this->db->bind('username', $username);
-        $this->db->execute();
-    }
-
-    public function deleteSubjects($username){
-        $this->db->query("DELETE FROM subjects WHERE student_username = :username");
-        $this->db->bind('username', $username);
-        $this->db->execute();
     }
 
     public function createUser($username, $firstname, $lastname, $email, $password, $school, $role){
@@ -155,8 +123,8 @@ class User{
         $this->db->query("DELETE FROM users WHERE username = :username");
         $this->db->bind('username', $username);
         $this->db->execute();
-        $this->deleteMarks($username);
-        $this->deleteSubjects($username);
+        $this->m->deleteMarks($username);
+        $this->s->deleteSubjects($username);
 
         return 'Vartotojas sėkmingai ištrintas';
     }

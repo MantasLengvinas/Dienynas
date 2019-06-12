@@ -2,7 +2,8 @@
 
 <?php 
 
-$user = new User;
+$m = new Mark;
+$s = new Subject;
 $template = new Template('../templates/user/Pamoka/DienynasTable.php');
 
 $metai = $_POST['metai'];
@@ -33,8 +34,8 @@ $startDay = $wday;
 $monthName = $info[1];
 $dayName = $info[0];
 
-$marks = $user->getAllMarks($_SESSION['username']);
-$subjects = $user->getAllSubjects($_SESSION['username']);
+$marks = $m->getAllMarks($_SESSION['username']);
+$subjects = $s->getAllSubjects($_SESSION['username']);
 
 $template->monthName = $monthName[$menuo];
 $template->dayName = $dayName;

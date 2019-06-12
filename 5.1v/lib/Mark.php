@@ -1,6 +1,13 @@
 <?php 
 
 class Mark{
+
+    private $db;
+
+    public function __construct(){
+        $this->db = new Database;
+    }
+
     public function typeColor($id){
         switch($id){
             case 0:
@@ -26,5 +33,21 @@ class Mark{
             break;
         }
         return $color;
+    }
+
+    public function getAllMarks($username){
+        $this->db->query("SELECT * FROM marks WHERE student_username=:username ORDER BY uploaded DESC");
+        $this->db->bind('username', $username);
+        $this->db->execute();
+
+        $data = $this->db->getAll();
+
+        return $data;
+    }
+
+    public function deleteMarks($username){
+        $this->db->query("DELETE FROM marks WHERE student_username = :username");
+        $this->db->bind('username', $username);
+        $this->db->execute();
     }
 }
