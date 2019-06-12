@@ -43,7 +43,7 @@
     }else{
         echo '<div style="margin: 10px 0 10px 0;">
         <div style="height: 15px;">
-           <label style="float: left;"><b>Dalykai ('.sizeof($marks).')</b></label>
+           <label style="float: left;"><b>Dalykai ('.sizeof($subjects).')</b></label>
         </div>     
      </div>
  
@@ -94,7 +94,7 @@
                         <td><?=$mark->month?></td>
                         <td><?=$mark->day?></td>
                         <td><?=$mark->mark?></td>
-                        <td><?=$mark->type?></td>
+                        <td><?php echo '<div style="padding:0;margin:0;vertical-align:middle"><span class="fa fa-circle '.$mark->type.'" style="vertical-align:middle;font-weight:bold;font-size:10px;padding-left:2px;margin-top:-2px"></span></div>';?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>
@@ -104,6 +104,6 @@
 
 
 <div class="right">
-    <a class="btn c_btn" onclick="deleteUser(<?=$data[0]->id?>);"><span>Ištrinti vartotoją</span></a>
+    <a class="btn c_btn" onclick="deleteUser('<?=$data[0]->username?>');"><span>Ištrinti vartotoją</span></a>
 </div>
     </div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div>

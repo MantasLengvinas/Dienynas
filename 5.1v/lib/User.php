@@ -124,6 +124,18 @@ class User{
         return $data;
     }
 
+    public function deleteMarks($username){
+        $this->db->query("DELETE FROM marks WHERE student_username = :username");
+        $this->db->bind('username', $username);
+        $this->db->execute();
+    }
+
+    public function deleteSubjects($username){
+        $this->db->query("DELETE FROM subjects WHERE student_username = :username");
+        $this->db->bind('username', $username);
+        $this->db->execute();
+    }
+
     public function createUser($username, $firstname, $lastname, $email, $password, $school, $role){
         $this->db->query("INSERT INTO users (firstname, lastname, username, email, password, school, role) VALUES (:firstname, :lastname, :username, :email, :password, :school, :role)");
         $hashed_password = md5($password);
@@ -139,10 +151,12 @@ class User{
         return 'Vartotojas sėkmingai sukurtas!';
     }
 
-    public function deleteUser($id){
-        $this->db->query("DELETE FROM users WHERE id = :id");
-        $this->db->bind('id', $id);
+    public function deleteUser($username){
+        $this->db->query("DELETE FROM users WHERE username = :username");
+        $this->db->bind('username', $username);
         $this->db->execute();
+        $this->deleteMarks($username);
+        $this->deleteSubjects($username);
 
         return 'Vartotojas sėkmingai ištrintas';
     }
