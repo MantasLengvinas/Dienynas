@@ -11,53 +11,57 @@ function reload(){
       }, 3000);
 }
 
+function startLoading(){
+    document.getElementById('loader').classList.remove('hidden');
+    $('html').css('opacity', '0.6');
+}
+
+function stopLoading(){
+    document.getElementById('loader').classList.add('hidden');
+    $('html').css('opacity', '1');
+}
+
 //Admin requests
 
 let users = (id) =>{
-    document.getElementById('loader').classList.remove('hidden');
-    $('html').css('opacity', '0.6');
+    startLoading();
     $('.date_selector div').removeClass('date_active');
     $(id).parent().addClass('date_active');
     $.ajax({
         type: 'GET',
-        url: '../Admin/users.php',
+        url: '../Admin/Users.php',
     })
     .done(function(data){
         $('#admin_content').html(data);
-        document.getElementById('loader').classList.add('hidden');
-        $('html').css('opacity', '1');
+        stopLoading();
     });
 }
 
 let marks = (id) =>{
-    document.getElementById('loader').classList.remove('hidden');
-    $('html').css('opacity', '0.6');
+    startLoading();
     $('.date_selector div').removeClass('date_active');
     $(id).parent().addClass('date_active');
     $.ajax({
         type: 'GET',
-        url: '../Admin/marks.php',
+        url: '../Admin/Marks.php',
     })
     .done(function(data){
         $('#admin_content').html(data);
-        document.getElementById('loader').classList.add('hidden');
-        $('html').css('opacity', '1');
+        stopLoading();
     });
 }
 
 let subjects = (id) =>{
-    document.getElementById('loader').classList.remove('hidden');
-    $('html').css('opacity', '0.6');
+    startLoading();
     $('.date_selector div').removeClass('date_active');
     $(id).parent().addClass('date_active');
     $.ajax({
         type: 'GET',
-        url: '../Admin/subjects.php',
+        url: '../Admin/Subjects.php',
     })
     .done(function(data){
         $('#admin_content').html(data);
-        document.getElementById('loader').classList.add('hidden');
-        $('html').css('opacity', '1');
+        stopLoading();
     });
 }
 
@@ -69,10 +73,6 @@ let moreInfo = id =>{
     })
     .done(function(data){
         $('#moreInfo-response').html(data);
-        var modal = document.getElementById('myModal');
-        function showModal(){
-            modal.classList.toggle('show');
-         }
          var closeBtn = document.getElementById('closeModalBtn');
          closeBtn.onclick = function(){
            showModal();
@@ -128,6 +128,8 @@ let deleteUser = (id) =>{
     }
 }
 
+let getUser
+
 //User requests
 
 let monthInfo = [
@@ -138,8 +140,7 @@ let monthInfo = [
 ];
 
 let loadTable = (id) =>{
-    document.getElementById('loader').classList.remove('hidden');
-    $('html').css('opacity', '0.6');
+    startLoading();
     $('.date_selector div').removeClass('date_active');
     $(id).parent().addClass('date_active');
     let metai = $(id).data('metai');
@@ -155,8 +156,7 @@ let loadTable = (id) =>{
     .done(function(data){
         $('#timetable_content').html(data);
         //loadMarks(id);
-        document.getElementById('loader').classList.add('hidden');
-        $('html').css('opacity', '1');
+        stopLoading();
         scrollTimeTable(metai, menuo);
     });
 }
@@ -174,8 +174,7 @@ let loadMarks = (id) =>{
     })
     .done(function(data){
         writeMarks(data); 
-        document.getElementById('loader').classList.add('hidden');
-        $('html').css('opacity', '1');
+        stopLoading();
     });
 }
 

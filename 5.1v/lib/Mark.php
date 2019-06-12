@@ -3,6 +3,7 @@
 class Mark{
 
     private $db;
+    public $markTypes = array('Kontrolinis darbas', 'Savarankiškas darbas', 'Klasės darbas', 'Kaupiamasis', 'Praktinis darbas', 'Namų darbai', 'Įskaita');
 
     public function __construct(){
         $this->db = new Database;
@@ -49,5 +50,9 @@ class Mark{
         $this->db->query("DELETE FROM marks WHERE student_username = :username");
         $this->db->bind('username', $username);
         $this->db->execute();
+    }
+
+    public function uploadMark(){
+
     }
 }

@@ -85,7 +85,16 @@ class User{
         $data = $this->db->getAll();
 
         return $data;
+    }
 
+    public function getStudents(){
+        $this->db->query("SELECT * FROM users WHERE role = :role ORDER BY id DESC");
+        $this->db->bind('role', 0);
+        $this->db->execute();
+
+        $data = $this->db->getAll();
+
+        return $data;
     }
 
     public function getUserData($id){
