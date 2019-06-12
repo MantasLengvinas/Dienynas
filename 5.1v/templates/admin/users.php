@@ -1,6 +1,6 @@
 
 <div class="row">
-    <div class="col-lg-10" style="height: 250px; overflow-y: auto;">
+    <div class="col-lg-10" style="height: auto; max-height: 250px; overflow-y: auto;">
     <div style="margin: 10px 0 10px 0;">
        <div style="height: 15px;">
           <label style="float: left;"><b>Visi vartotojai</b></label>
