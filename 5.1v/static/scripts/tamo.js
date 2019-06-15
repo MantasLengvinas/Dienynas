@@ -128,7 +128,22 @@ let deleteUser = (id) =>{
     }
 }
 
-let getUser
+let prepareMark = () =>{
+
+    let username = $("#student").val();
+    startLoading();
+
+    $.ajax({
+        type: 'POST',
+        data: {username: username, monthInfo: monthInfo},
+        url: '../Admin/prepareMark.php'
+    })
+    .done(function(data){
+        $("#prepareMark-response").html(data);
+        stopLoading();
+    })
+
+}
 
 //User requests
 
