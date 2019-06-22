@@ -15,7 +15,6 @@
                 <?php 
                     foreach($students as $student){
                         echo '<option value="'.$student->username.'">'.$student->firstname.' '.$student->lastname.'</option>';
-                        $i++;
                     }
                 ?>
             </select>

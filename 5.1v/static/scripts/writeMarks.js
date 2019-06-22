@@ -9,6 +9,7 @@ function toTimestamp(strDate){
 }
 
 let writeMarks = (data) =>{
+
     data.forEach(mark => {
         let mid = 'm' + mark.month + 'd' + mark.day + 's' + mark.subject;
         let cell = document.getElementById(mid);

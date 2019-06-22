@@ -35,7 +35,7 @@ $monthName = $info[1];
 $dayName = $info[0];
 
 $marks = $m->getAllMarks($_SESSION['username']);
-$subjects = $s->getAllSubjects($_SESSION['username']);
+$subjects = $s->getSubjectNames($_SESSION['username']);
 
 $template->monthName = $monthName[$menuo];
 $template->dayName = $dayName;

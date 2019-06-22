@@ -10,8 +10,4 @@ $template->firstname = $_SESSION['firstname'];
 $template->lastname = $_SESSION['lastname'];
 $template->role = $_SESSION['role'];
 
-//$template->logout = $user->Logout();
-
-//$template->users = $user->getAllUsers();
-
 echo $template;

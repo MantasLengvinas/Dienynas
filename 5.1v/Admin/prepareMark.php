@@ -8,8 +8,8 @@
     $username = $_POST['username'];
     $monthInfo = $_POST['monthInfo'];
 
-    $template->subjects = $s->getAllSubjects($username);
-    $template->months = $monthInfo;
+    $template->subjects = $s->getSubjectNames($username);
+    $template->months = $monthInfo[1];
     $template->markTypes = $m->markTypes;
 
     echo $template;

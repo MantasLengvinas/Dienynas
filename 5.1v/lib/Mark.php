@@ -46,13 +46,35 @@ class Mark{
         return $data;
     }
 
+    public function getMonthMarks($username, $month, $year){
+        $this->db->query("SELECT * FROM marks WHERE student_username=:username AND month=:month AND year=:year ORDER BY uploaded DESC");
+        $this->db->bind('username', $username);
+        $this->db->bind('month', $month);
+        $this->db->bind('year', $year);
+        $this->db->execute();
+
+        $data = $this->db->getAll();
+
+        return $data;
+    }
+
     public function deleteMarks($username){
         $this->db->query("DELETE FROM marks WHERE student_username = :username");
         $this->db->bind('username', $username);
         $this->db->execute();
     }
 
-    public function uploadMark(){
+    public function uploadMark($uname, $subj, $year, $month, $day, $mark, $type){
+        $this->db->query("INSERT INTO marks (student_username, subject, year, month, day, mark, type) VALUES (:student_username, :subject, :year, :month, :day, :mark, :type)");
+        $this->db->bind("student_username", $uname);
+        $this->db->bind("subject", $subj);
+        $this->db->bind("year", $year);
+        $this->db->bind("month", $month);
+        $this->db->bind("day", $day);
+        $this->db->bind("mark", $mark);
+        $this->db->bind("type", $type);
+        $this->db->execute();
 
+        return 'Pažymys sėkmingai įrašytas!';
     }
 }

@@ -145,6 +145,50 @@ let prepareMark = () =>{
 
 }
 
+let uploadMark = () => {
+
+    startLoading();
+
+    let student = $("#student").val();
+    let subject = $("#subject").val();
+    let year = '2019';
+    let month = $("#month").val();
+    let day = $("#day").val();
+    let mark = $("#mark").val();
+    let type = $("#type").val();
+
+    let data = {student: student, subject: subject, year: year, month: month, day: day, mark: mark, type: type};
+
+    $.post({
+        url: '../Admin/uploadMark.php',
+        data: data
+    })
+    .done(function(data){
+        $("#modal-response").html(data);
+        stopLoading();
+    })
+}
+
+let uploadSubject = () => {
+
+    startLoading();
+
+    let student = $("#student").val();
+    let subject = $("#subject").val();
+    let teacher = $("#teacher").val();
+
+    let data = {st: student, s: subject, t: teacher};
+
+    $.post({
+        data: data,
+        url: '../Admin/uploadSubject.php'
+    })
+    .done(function(data){
+        $("#uploadsubject-response").html(data);
+        stopLoading();
+    })
+} 
+
 //User requests
 
 let monthInfo = [
@@ -170,7 +214,7 @@ let loadTable = (id) =>{
     })
     .done(function(data){
         $('#timetable_content').html(data);
-        //loadMarks(id);
+        loadMarks(id);
         stopLoading();
         scrollTimeTable(metai, menuo);
     });
@@ -179,8 +223,8 @@ let loadTable = (id) =>{
 let loadMarks = (id) =>{
     let metai = $(id).data('metai');
     let menuo = $(id).data('menuo');
-    let data = {metai: metai, menuo: menuo, info: monthInfo};
-    let url = '../Pamoka/DienynasMarks';
+    let data = {metai: metai, menuo: menuo};
+    let url = '../Pamoka/DienynasMarks.php';
     $.ajax({
         type: 'POST',
         url: url,
@@ -188,7 +232,7 @@ let loadMarks = (id) =>{
         dataType: 'JSON'
     })
     .done(function(data){
-        writeMarks(data); 
+        writeMarks(data);
         stopLoading();
     });
 }

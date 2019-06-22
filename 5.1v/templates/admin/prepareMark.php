@@ -3,9 +3,13 @@
                                 
                                 <select class="p-2" name="month" id="month">
                                     <?php
-                                        $i = 1;  
+                                        $i = 0;  
                                         foreach($months as $month){
-                                            echo '<option value="'.$i.'">'.ucfirst($month).'</option>';
+                                            if($i == 0){
+                                                echo '<option value="'.$i.'">-</option>';
+                                            }else{
+                                                echo '<option value="'.$i.'">'.$month.'</option>';
+                                            }
                                             $i++;
                                         }
                                     ?>
@@ -30,7 +34,7 @@
                                         <?php 
                                         $i = 0; 
                                         foreach($subjects as $subject){
-                                            echo '<option value="'.$i.'">'.$subject.'</option>';
+                                            echo '<option value="'.$i.'">'.$subject->subject.'</option>';
                                             $i++;
                                         }
                                         ?>
@@ -66,9 +70,9 @@
                                     </select>
                             </div>
                             
-                            <button class="p-2 c_btn submit " name="submit" id="uploadButton"><a style="color: #fff;">Įrašyti</a></button>
+                            <button class="p-2 c_btn submit " name="submit" id="uploadButton" onclick="uploadMark();"><a style="color: #fff;">Įrašyti</a></button>
                         </div>
-                        <label id="response" style="margin: 20px 0;"></label>
+                        
                     </div>
                     
-                    <div id="modal-response"></div>
+                    <b><div id="modal-response" style="margin: 10px 0 0 0"></div></b>

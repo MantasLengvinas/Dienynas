@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-md-14">
                         <div style="margin:20px 0" class="date_selector" id="">
-                                <div id="marks" class="date_active" style="display:inline-block;padding:5px;font-weight:bold;"><a style="text-decoration:none;" href="javascript:void(0);" onclick="users(this);">Vartotojai</a></div>
+                                <div style="display:inline-block;padding:5px;font-weight:bold;"><a id="users" style="text-decoration:none;" href="javascript:void(0);" onclick="users(this);">Vartotojai</a></div>
                                 <div style="display:inline-block;padding:5px;font-weight:bold;"><a id="marks" style="text-decoration:none;" href="javascript:void(0);" onclick="marks(this);">Pažymiai</a></div>
                                 <div style="display:inline-block;padding:5px;font-weight:bold;"><a id="subjects" style="text-decoration:none;" href="javascript:void(0);" onclick="subjects(this);">Dalykai</a></div>
                         </div>
