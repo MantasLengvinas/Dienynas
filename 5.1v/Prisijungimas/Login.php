@@ -4,13 +4,15 @@
 
 //Auto redirect if logged in
 
-if($_SESSION['logged_in'] && $_SESSION['role'] == 'Mokinys'){
-    $url = 'Naujienos';
-    header("Location: $url");
-}
-else if($_SESSION['logged_in'] && $_SESSION['role'] == 'Administratorius'){
-    $url = '../Admin/Home';
-    header("Location: $url");
+if(isset($_SESSION['logged_in'])){
+    if($_SESSION['role'] == 'Mokinys'){
+        $url = 'Naujienos';
+        header("Location: $url");
+    }
+    else if($_SESSION['role'] == 'Administratorius'){
+        $url = '../Admin/Home';
+        header("Location: $url");
+    }
 }
 else{
 

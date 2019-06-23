@@ -25,7 +25,7 @@
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-14" style="position:relative;" id="admin_content">
+                    <div class="col-md-14 d-flex" style="position:relative;" id="admin_content">
 
                     </div>
                 </div>
