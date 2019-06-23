@@ -6,6 +6,7 @@
     $template = new Template('../templates/admin/userInfo.php');
     $user = new User;
     $m = new Mark;
+    $s = new Subject;
 
     $template->data = $user->getUserData($id);
     $subjects = $template->data[2];

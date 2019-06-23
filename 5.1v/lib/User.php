@@ -25,6 +25,20 @@ class User{
         }
     }
 
+    public function userExist($username){
+        $this->db->query("SELECT username FROM users WHERE username=:un");
+        $this->db->bind('un', $username);
+        $this->db->execute();
+
+        $count = $this->db->rowCount();
+        if($count > 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     public function Login($username, $password){
 
         try{
@@ -47,7 +61,6 @@ class User{
                 $this->role = $data->role;
                 $_SESSION['role'] = $this->roleTitle($this->role);
                 
-                // This is how we'll know the user is logged in
                 $_SESSION['logged_in'] = true;
                 return true;
             }
@@ -116,16 +129,21 @@ class User{
     public function createUser($username, $firstname, $lastname, $email, $password, $school, $role){
         $this->db->query("INSERT INTO users (firstname, lastname, username, email, password, school, role) VALUES (:firstname, :lastname, :username, :email, :password, :school, :role)");
         $hashed_password = md5($password);
-        $this->db->bind("firstname", $firstname);
-        $this->db->bind("lastname", $lastname);
-        $this->db->bind("username", $username);
-        $this->db->bind("email", $email);
-        $this->db->bind("password", $hashed_password);
-        $this->db->bind("school", $school);
-        $this->db->bind("role", $role);
-        $this->db->execute();
+        if(!$this->userExist($username)){
+            $this->db->bind("firstname", $firstname);
+            $this->db->bind("lastname", $lastname);
+            $this->db->bind("username", $username);
+            $this->db->bind("email", $email);
+            $this->db->bind("password", $hashed_password);
+            $this->db->bind("school", $school);
+            $this->db->bind("role", $role);
+            $this->db->execute();
 
-        return 'Vartotojas sėkmingai sukurtas!';
+            return 'Vartotojas sėkmingai sukurtas!';
+        }
+        else{
+            return 'Šis vartotojo vardas jau naudojamas!';
+        }
     }
 
     public function deleteUser($username){

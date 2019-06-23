@@ -16,6 +16,7 @@ class Subject{
         $this->db->execute();
 
         $data = $this->db->getAll();
+        sort($data);
 
         return $data;
     }
