@@ -4,7 +4,7 @@
 
 $m = new Mark;
 $s = new Subject;
-$template = new Template('../templates/user/Pamoka/MokinioDienynas.php');
+$template = new Template('../templates/user/PeriodoVertinimai/MokinioVertinimai.php');
 
 $template->marks = $m->getAllMarks($_SESSION['username']);
 $template->subjects = $s->getAllSubjects($_SESSION['username']);
