@@ -297,3 +297,16 @@ let scrollTimeTable = (metai, menuo) => {
         $("#scrollable_dienynas").scrollLeft(28 * (today_day - 16));
     }
 }
+
+let loadPeriodTable = () => {
+    let period = $('#laikotarpis').val();
+    let url = '../PeriodoVertinimas/periodTable.php';
+
+    $.post({
+        url: url,
+        data: {p: period}
+    })
+    .done(function(data){
+        $('#periodtable-response').html(data);
+    })
+}

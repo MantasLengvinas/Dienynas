@@ -22,8 +22,25 @@ class Period {
         }
     }
 
-    public function loadPeriodMarks($period, $username){
+    public function rowHeight($string){
+        if(strlen($string) >= 40){
+            return '67';
+        }
+        else{
+            return '48';
+        }
+    }
 
+    public function loadPeriodMarks($period, $subject, $username){
+        $this->db->query("SELECT * FROM marks WHERE student_username=:username AND subject=:subject AND period=:period ORDER BY uploaded DESC");
+        $this->db->bind('username', $username);
+        $this->db->bind('subject', $subject);
+        $this->db->bind('period', $period);
+        $this->db->execute();
+
+        $data = $this->db->getAll();
+
+        return $data;
     }
 
 }

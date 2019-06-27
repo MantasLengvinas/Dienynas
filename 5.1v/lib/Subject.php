@@ -16,7 +16,9 @@ class Subject{
         $this->db->execute();
 
         $data = $this->db->getAll();
-        sort($data);
+        usort($data, function($a, $b){
+            return strcmp($a->subject, $b->subject);
+        });
 
         return $data;
     }

@@ -65,7 +65,13 @@ class Mark{
     }
 
     public function uploadMark($uname, $subj, $year, $month, $day, $mark, $type){
-        $this->db->query("INSERT INTO marks (student_username, subject, year, month, day, mark, type) VALUES (:student_username, :subject, :year, :month, :day, :mark, :type)");
+        $period = 0;
+        if($month >= 9){
+            $period = 1;
+        }else{
+            $period = 2;
+        }
+        $this->db->query("INSERT INTO marks (student_username, subject, year, month, day, mark, type, period) VALUES (:student_username, :subject, :year, :month, :day, :mark, :type, :period)");
         $this->db->bind("student_username", $uname);
         $this->db->bind("subject", $subj);
         $this->db->bind("year", $year);
@@ -73,6 +79,7 @@ class Mark{
         $this->db->bind("day", $day);
         $this->db->bind("mark", $mark);
         $this->db->bind("type", $type);
+        $this->db->bind("period", $period);
         $this->db->execute();
 
         return 'Pažymys sėkmingai įrašytas!';
