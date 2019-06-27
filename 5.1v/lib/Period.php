@@ -9,21 +9,21 @@ class Period {
         $this->m = new Mark;
     }
 
-    public function getAvg($username, $subject){
-        $this->db->query("SELECT mark FROM marks WHERE student_username = :username");
-        $this->db->bind("username", $username);
-        $this->db->execute();
+    public function setPeriodDesc($period){
+        switch($period){
+            case 0:
+                return 'Metinis';
+            break;
+            case 1:
+                return '1 pusmetis, 2018-09-03 - 2019-01-25';
+            break;
+            case 2:
+                return '2 pusmetis, 2018-01-26 - 2019-06-21';
+        }
+    }
 
-        $marks = $this->db->getAll();
-        $sum = 0;
-        $i = 0;
+    public function loadPeriodMarks($period, $username){
 
-        // foreach($marks as $mark){
-        //     $sum += intval($mark);
-        //     $i++;
-        // }
-
-        return $marks;
     }
 
 }
