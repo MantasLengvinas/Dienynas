@@ -10,6 +10,7 @@
     <title></title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta http-equiv="content-language" content="lt">
+    <meta charset="ISO 8859-10">
     <link rel="shortcut icon" href="../static/images/favicon.ico">
 
     <link href="../static/styles/jquery.ui.css" rel="stylesheet">

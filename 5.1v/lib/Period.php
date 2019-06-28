@@ -2,11 +2,11 @@
 
 class Period {
 
-    private $db, $m;
+    private $db, $s;
 
     public function __construct(){
         $this->db = new Database;
-        $this->m = new Mark;
+        $this->s = new Subject;
     }
 
     public function setPeriodDesc($period){
@@ -41,6 +41,58 @@ class Period {
         $data = $this->db->getAll();
 
         return $data;
+    }
+
+    public function subjectAvg($period, $subject, $username){
+        $marks = $this->loadPeriodMarks($period, $subject, $username);
+        $sum = 0;
+        $i = 0;
+        foreach($marks as $mark){
+            $sum += intval($mark->mark);
+            $i++;
+        }
+
+        if($sum > 0){
+            return round($sum / $i, 2);
+            $this->updatePeriod($username, $subject, $period, round($sum / $i, 2));
+        }
+        else{
+            return 0;
+        }
+    }
+
+    public function roundedAvg($period, $subject, $username){
+        $avg = $this->subjectAvg($period, $subject, $username);
+
+        if($avg != 0){
+            return round($avg);
+        }
+    }
+
+    private function updatePeriod($username, $subj, $period, $value){
+
+        $name = 0;
+        $sub = $this->s->getSubjectNames($username);
+        $subject = utf8_encode($sub[intval($subj)]->subject);
+
+        switch($period){
+            case 0:
+                $name = 'annual';
+            break;
+            case 1:
+                $name = 'first_period';
+            break;
+            case 2:
+                $name = 'second_period';
+            break;
+        }
+
+        $this->db->query("UPDATE subjects SET $name=:value WHERE student_username=:username AND subject=:subject");
+        $this->db->bind('value', $value);
+        $this->db->bind('username', $username);
+        $this->db->bind('subject', $subject);
+
+        $this->db->execute();
     }
 
 }

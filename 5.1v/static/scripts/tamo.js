@@ -299,6 +299,7 @@ let scrollTimeTable = (metai, menuo) => {
 }
 
 let loadPeriodTable = () => {
+    startLoading();
     let period = $('#laikotarpis').val();
     let url = '../PeriodoVertinimas/periodTable.php';
 
@@ -308,5 +309,6 @@ let loadPeriodTable = () => {
     })
     .done(function(data){
         $('#periodtable-response').html(data);
+        stopLoading();
     })
 }

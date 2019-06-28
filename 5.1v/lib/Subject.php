@@ -49,4 +49,5 @@ class Subject{
         $this->db->bind('username', $username);
         $this->db->execute();
     }
+
 }

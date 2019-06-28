@@ -34,7 +34,7 @@
                 ?>
             </tbody>
         </table>
-        <div class="left slider_holder" id="slenkanti_dalis" style="width: 565px; height: 916px;"><table class="c_main_table wrap_text left">
+        <div class="left slider_holder" id="slenkanti_dalis" style="width: 565px; height: auto;"><table class="c_main_table wrap_text left">
             <colgroup>
                 
                 <col width="600">
@@ -70,11 +70,16 @@
                             <td class="a_center" style="font-size:15px">
     
     
-                                <span>10</span>
+                                <span>';if($p->subjectAvg($period, $i, $_SESSION['username']) != 0){
+                                    echo $p->subjectAvg($period, $i, $_SESSION['username']);
+                                }
+                                else{
+                                    echo ' ';
+                                } echo '</span>
     
     
                             </td>
-                                    <td class="a_center"><span style="font-weight:bold;font-size:15px">10</span></td>
+                                    <td class="a_center"><span style="font-weight:bold;font-size:15px">'.$p->roundedAvg($period, $i, $_SESSION['username']).'</span></td>
                         </tr>';
                             $i++;
                         }
@@ -83,12 +88,12 @@
                 <tr style="background: rgb(238, 238, 238) none repeat scroll 0% 0%; height: 48px;">
                     
                     <td style="padding-top:10px;padding-bottom:10px;">
-                            <span style="font-weight:bold;font-size:20px"> 8,42</span>
+                            <span style="font-weight:bold;font-size:20px"><?=$period?></span>
                     </td>
                     <td></td>
 
                         <td class="a_center" style="padding-top:10px;padding-bottom:10px;">
-                                <span style="font-weight:bold;font-size:20px">8,6</span>
+                                <span style="font-weight:bold;font-size:20px"><?=$period?></span>
 
                         </td>
                 </tr>
