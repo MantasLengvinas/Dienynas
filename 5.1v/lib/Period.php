@@ -53,10 +53,11 @@ class Period {
         }
 
         if($sum > 0){
-            return round($sum / $i, 2);
             $this->updatePeriod($username, $subject, $period, round($sum / $i, 2));
+            return round($sum / $i, 2);
         }
         else{
+            //$this->updatePeriod($username, $subject, $period, 0);
             return 0;
         }
     }
@@ -86,7 +87,7 @@ class Period {
                 $name = 'second_period';
             break;
         }
-
+ 
         $this->db->query("UPDATE subjects SET $name=:value WHERE student_username=:username AND subject=:subject");
         $this->db->bind('value', $value);
         $this->db->bind('username', $username);

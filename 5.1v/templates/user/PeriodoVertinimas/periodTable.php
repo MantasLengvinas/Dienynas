@@ -60,8 +60,8 @@
                             <td>';
                                 $marks = $p->loadPeriodMarks($period, $i, $_SESSION['username']);
                                 foreach($marks as $mark){
-                                    echo '<div style="text-align:center;cursor:pointer;font-size:15px;display:inline-block;vertical-align:top;margin-right:10px;font-weight:normal;">
-                                    <span class=" ">
+                                    echo '<div style="text-align:center;cursor:pointer;font-size:15px;display:inline-block;vertical-align:top;margin-right:10px;font-weight:normal;">';
+                                    if($mark->type == '0'){echo '<span class="color_kontr" style="font-weight: bold";>';}else{echo '<span class=" ">';} echo '
                                         '.$mark->mark.'
                                     </span>
                                     </div>';
