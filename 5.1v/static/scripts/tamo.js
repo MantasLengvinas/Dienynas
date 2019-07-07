@@ -158,7 +158,7 @@ let uploadMark = () => {
 
     let student = $("#student").val();
     let subject = $("#subject").val();
-    let year = '2019';
+    let year = $("#year").val();
     let month = $("#month").val();
     let day = $("#day").val();
     let mark = $("#mark").val();

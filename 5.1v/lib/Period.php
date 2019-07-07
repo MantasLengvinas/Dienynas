@@ -83,20 +83,22 @@ class Period {
     }
 
     public function totalRoundedAvg($period, $username){
-        $sub = $this->s->getSubjectNames($username);
-        $sum = 0;
-        $i = 0;
+        //if($period == 3){
+            $sub = $this->s->getSubjectNames($username);
+            $sum = 0;
+            $i = 0;
 
-        foreach($sub as $su){
-            $sum += $this->roundedAvg($period, $i, $username);
-            if($this->roundedAvg($period, $i, $username) != 0){
-                $i++;
+            foreach($sub as $su){
+                $sum += $this->roundedAvg($period, $i, $username);
+                if($this->roundedAvg($period, $i, $username) != 0){
+                    $i++;
+                }
             }
-        }
 
-        if($sum > 0){
-            return round($sum / $i, 2);
-        }
+            if($sum > 0){
+                return round($sum / $i, 2);
+            }
+        //}
 
     }
 

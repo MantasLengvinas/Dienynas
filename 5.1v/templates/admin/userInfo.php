@@ -76,31 +76,49 @@
        </div>     
     </div>
     
-    <div class="col-lg-10" style="height: 150px; overflow-y: auto;">
-        <table class="dienynas" >
+    <div class="col-lg-10" style="z-index:2;" id="">
+
+    <!-- <div class=" " style="z-index:2;" id="">
+
+        <table class="dienynas" style="position: absolute; z-index: 3;">
             <thead><tr>
-                <td style="width: 120px;">Dalykas</td>
-                <td style="width: 80px;">Metai</td>
-                <td style="width: 80px;">Mėnuo</td>
-                <td style="width: 80px;">Diena</td>
-                <td style="width: 80px;">Pažymys</td>
-                <td style="width: 80px;">Tipas</td>
+                <td style="width: 121px;">Dalykas</td>
+                <td style="width: 36px;">Metai</td>
+                <td style="width: 44px;">Mėnuo</td>
+                <td style="width: 37px;">Diena</td>
+                <td style="width: 55px;">Pažymys</td>
+                <td style="width: 35px;">Tipas</td>
             </tr></thead>
-            <tbody>
-                <?php foreach($data[1] as $mark): ?>
-                    <tr>
-                        <td><?=$mark->subject?></td>
-                        <td><?=$mark->year?></td>
-                        <td><?=$mark->month?></td>
-                        <td><?=$mark->day?></td>
-                        <td><?=$mark->mark?></td>
-                        <td><?php echo '<div style="padding:0;margin:0;vertical-align:middle"><span class="fa fa-circle '.$mark->type.'" style="vertical-align:middle;font-weight:bold;font-size:10px;padding-left:2px;margin-top:-2px"></span></div>';?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
         </table>
+    </div>     -->
+
+        <div style="height: 150px; overflow-y: auto; z-index:1">
+
+            <table class="dienynas">
+                <thead><tr>
+                    <td style="width: 121px;">Dalykas</td>
+                    <td style="width: 40;">Metai</td>
+                    <td style="width: 47px;">Mėnuo</td>
+                    <td style="width: 40px;">Diena</td>
+                    <td style="width: 57px;">Pažymys</td>
+                    <td style="width: 38px;">Tipas</td>
+                </tr></thead>
+                <tbody>
+                    <?php foreach($data[1] as $mark): ?>
+                        <tr>
+                            <td><?=$mark->subject?></td>
+                            <td><?=$mark->year?></td>
+                            <td><?=$mark->month?></td>
+                            <td><?=$mark->day?></td>
+                            <td><?=$mark->mark?></td>
+                            <td><?php echo '<div style="padding:0;margin:0;vertical-align:middle"><span class="fa fa-circle '.$mark->type.'" style="vertical-align:middle;font-weight:bold;font-size:10px;padding-left:2px;margin-top:-2px"></span></div>';?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    <?php }?>
     </div>
-<?php }?>
 
 
 <div class="right" style="margin: 20px 0 0 0;">

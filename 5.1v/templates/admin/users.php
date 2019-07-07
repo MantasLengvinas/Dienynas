@@ -51,7 +51,7 @@
                 <input id="email" type="email" name="email" placeholder="Elektroninis paštas">
             </div>
             <div class="p-2">     
-                <input id="password" type="password" name="username" placeholder="Slaptažodis">
+                <input id="password" type="password" name="password" placeholder="Slaptažodis">
             </div>
             <div class="p-2">     
                 <input id="school" type="text" name="school" placeholder="Mokykla">
