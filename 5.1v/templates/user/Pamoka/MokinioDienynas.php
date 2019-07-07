@@ -26,6 +26,7 @@
                                 <div id="8" class="hidden" style="display:inline-block;padding:5px;font-weight:bold;"><a style="text-decoration:none;" data-menuo="4" data-metai="2019" href="javascript:void(0);" onclick="loadTable(this);">2019-04</a></div>
                                 <div id="9" class="hidden" style="display:inline-block;padding:5px;font-weight:bold;"><a style="text-decoration:none;" data-menuo="5" data-metai="2019" href="javascript:void(0);" onclick="loadTable(this);">2019-05</a></div>
                                 <div id="10" class="hidden" style="display:inline-block;padding:5px;font-weight:bold;"><a style="text-decoration:none;" data-menuo="6" data-metai="2019" href="javascript:void(0);" onclick="loadTable(this);">2019-06</a></div>
+                                <div id="10" class="hidden" style="display:inline-block;padding:5px;font-weight:bold;"><a style="text-decoration:none;" data-menuo="7" data-metai="2019" href="javascript:void(0);" onclick="loadTable(this);">2019-07</a></div>
                         </div>
                     </div>
                 </div>

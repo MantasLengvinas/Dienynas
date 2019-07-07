@@ -34,9 +34,8 @@ class User{
         if($count > 0){
             return true;
         }
-        else{
-            return false;
-        }
+        
+        return 0;
     }
 
     public function Login($username, $password){
@@ -84,14 +83,14 @@ class User{
         if($this->role == 1){
             return true;
         }
-        else{
-            return false;
-        }
+        
+        return false;
     }
     
     //Admin functions
 
     public function getAllUsers(){
+
         $this->db->query("SELECT * FROM users ORDER BY id DESC");
         $this->db->execute();
 
@@ -130,22 +129,18 @@ class User{
         try{
             $this->db->query("INSERT INTO users (firstname, lastname, username, email, password, school, role) VALUES (:firstname, :lastname, :username, :email, :password, :school, :role)");
             $hashed_password = md5($password);
-            if(!$this->userExist($username)){
-                $this->db->bind("firstname", $firstname);
-                $this->db->bind("lastname", $lastname);
-                $this->db->bind("username", $username);
-                $this->db->bind("email", $email);
-                $this->db->bind("password", $hashed_password);
-                $this->db->bind("school", $school);
-                $this->db->bind("role", $role);
+            
+            $this->db->bind("firstname", $firstname);
+            $this->db->bind("lastname", $lastname);
+            $this->db->bind("username", $username);
+            $this->db->bind("email", $email);
+            $this->db->bind("password", $hashed_password);
+            $this->db->bind("school", $school);
+            $this->db->bind("role", $role);
 
-                $this->db->execute();
+            $this->db->execute();
 
-                return 'Vartotojas sėkmingai sukurtas!';
-            }
-            else{
-                return 'Šis vartotojo vardas jau naudojamas!';
-            }
+            return 'Vartotojas sėkmingai sukurtas!';
         }
         catch(PDOException $e){
             return $e;

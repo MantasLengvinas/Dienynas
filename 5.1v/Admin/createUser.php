@@ -2,7 +2,7 @@
 
 <?php 
 
-    $user = new User();
+    $user = new User;
 
     $username = $_POST['username'];
     $firstname = $_POST['firstname'];

@@ -106,7 +106,7 @@ let createUser = () => {
             data: data,
             url: '../Admin/createUser.php'
         })
-        .done(function (data) {
+        .done(function(data) {
             $("#user-response").html(data);
             reload();
         })
@@ -118,17 +118,17 @@ let deleteUser = (id) => {
 
     if (con) {
         $.ajax({
-                type: 'POST',
-                data: {
-                    id: id
-                },
-                url: '../Admin/deleteUser.php'
-            })
-            .done(function (data) {
-                $("#user-response").html(data);
-                showModal();
-                reload();
-            })
+            type: 'POST',
+            data: {
+                id: id
+            },
+            url: '../Admin/deleteUser.php'
+        })
+        .done(function(data) {
+            $("#user-response").html(data);
+            showModal();
+            reload();
+        })
     }
 }
 

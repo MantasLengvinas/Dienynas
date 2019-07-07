@@ -31,6 +31,17 @@ class Period {
         }
     }
 
+    public function getAllMarks($period, $username){
+        $this->db->query("SELECT * FROM marks WHERE student_username=:username AND period=:period ORDER BY uploaded DESC");
+        $this->db->bind('username', $username);
+        $this->db->bind('period', $period);
+        $this->db->execute();
+
+        $data = $this->db->getAll();
+
+        return $data;
+    }
+
     public function loadPeriodMarks($period, $subject, $username){
         $this->db->query("SELECT * FROM marks WHERE student_username=:username AND subject=:subject AND period=:period ORDER BY uploaded DESC");
         $this->db->bind('username', $username);
@@ -53,7 +64,7 @@ class Period {
         }
 
         if($sum > 0){
-            $this->updatePeriod($username, $subject, $period, round($sum / $i, 2));
+            //$this->updatePeriod($username, $subject, $period, round($sum / $i, 2));
             return round($sum / $i, 2);
         }
         else{
@@ -67,6 +78,40 @@ class Period {
 
         if($avg != 0){
             return round($avg);
+        }
+         
+    }
+
+    public function totalRoundedAvg($period, $username){
+        $sub = $this->s->getSubjectNames($username);
+        $sum = 0;
+        $i = 0;
+
+        foreach($sub as $su){
+            $sum += $this->roundedAvg($period, $i, $username);
+            if($this->roundedAvg($period, $i, $username) != 0){
+                $i++;
+            }
+        }
+
+        if($sum > 0){
+            return round($sum / $i, 2);
+        }
+
+    }
+
+    public function totalAvg($period, $username){
+        $sum = 0;
+        $i = 0;
+        $marks = $this->getAllMarks($period, $username);
+
+        foreach($marks as $mark){
+            $sum += intval($mark->mark);
+            $i++;
+        }
+
+        if($sum > 0){
+            return round($sum / $i, 2);
         }
     }
 

@@ -83,17 +83,16 @@
                         </tr>';
                             $i++;
                         }
-                    ?>
-                    
+                    ?>  
                 <tr style="background: rgb(238, 238, 238) none repeat scroll 0% 0%; height: 48px;">
                     
                     <td style="padding-top:10px;padding-bottom:10px;">
-                            <span style="font-weight:bold;font-size:20px"><?=$period?></span>
+                            <span style="font-weight:bold;font-size:20px"><?=$p->totalAvg($period, $_SESSION['username'])?></span>
                     </td>
                     <td></td>
 
                         <td class="a_center" style="padding-top:10px;padding-bottom:10px;">
-                                <span style="font-weight:bold;font-size:20px"><?=$period?></span>
+                                <span style="font-weight:bold;font-size:20px"><?=$p->totalRoundedAvg($period, $_SESSION['username'])?></span>
 
                         </td>
                 </tr>
