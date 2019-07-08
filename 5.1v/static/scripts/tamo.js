@@ -244,6 +244,23 @@ let periodData = () => {
 
 }
 
+let sessionInfo = (id) =>{
+    $.ajax({
+        type: 'GET',
+        data: {
+            id: id
+        },
+        url: '../Admin/sessionInfo.php'
+    })
+    .done(function (data) {
+        $('#sessionInfo-response').html(data);
+        var closeBtn = document.getElementById('closeModalBtn');
+        closeBtn.onclick = function () {
+            showModal();
+        }
+    })
+}
+
 //User requests
 
 let monthInfo = [

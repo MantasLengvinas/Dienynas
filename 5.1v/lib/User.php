@@ -1,5 +1,7 @@
 <?php 
 
+// 	
+
 class User{
     private $db; //db class
     private $m; //mark class
@@ -127,6 +129,16 @@ class User{
         $data = array(
             $user, $marks, $subjects
         );
+
+        return $data;
+    }
+
+    public function getUserByUsername($username){
+        $this->db->query("SELECT * FROM users WHERE username = :uname");
+        $this->db->bind('uname', $username);
+        $this->db->execute();
+
+        $data = $this->db->getSingle();
 
         return $data;
     }

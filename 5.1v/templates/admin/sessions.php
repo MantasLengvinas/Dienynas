@@ -10,18 +10,16 @@
     </div>
         <table class="dienynas" >
             <thead><tr>
-                <td style="width: 157px;">Vartojo vardas</td>
-                <td style="width: 157px;">IP adresas</td>
-                <td style="width: 157px;">MAC adresas</td>
-                <td style="width: 157px;">Prisijungimo laikas</td>
-                <td style="width: 157px;">Pašalinimo laikas</td>
+                <td style="width: 196.25px;">Vartojo vardas</td>
+                <td style="width: 196.25px;">IP adresas</td>
+                <td style="width: 196.25px;">Prisijungta</td>
+                <td style="width: 196.25px;">Pašalinimas</td>
             </tr></thead>
             <tbody id="marks_content">
             <?php foreach($sessions as $session){
-                echo '<tr class="mark-holder" style="cursor: pointer;">
+                echo '<tr class="mark-holder" style="cursor: pointer;" onclick="sessionInfo('.$session->id.');">
                     <td>'.$session->username.'</td>
                     <td>'.$session->ip.'</td>
-                    <td>'.$session->mac.'</td>
                     <td>'.$session->timestamp.'</td>
                     <td>'.$session->delete_at.'</td>
                 </tr>';
@@ -29,4 +27,7 @@
             </tbody>
         </table>
     </div>
+</div>
+<div id="sessionInfo-response">
+    
 </div>

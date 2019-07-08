@@ -22,16 +22,15 @@ class Session{
         return $d2[1];
     }
 
-    public function saveSession($username, $ip, $mac){
+    public function saveSession($username, $ip){
 
         $curr = date('Y-m-d');
         $date = date_create($curr);
         date_add($date, date_interval_create_from_date_string('7 days'));
         $delete = date_format($date, 'Y-m-d');
-        $this->db->query("INSERT INTO sessions (username, ip, mac, delete_at) VALUES (:username, :ip, :mac, :delete_at)");
+        $this->db->query("INSERT INTO sessions (username, ip, delete_at) VALUES (:username, :ip, :delete_at)");
         $this->db->bind('username', $username);
         $this->db->bind('ip', $ip);
-        $this->db->bind('mac', $mac);
         $this->db->bind('delete_at', $delete);
         
         $this->db->execute();
@@ -43,6 +42,15 @@ class Session{
         $this->db->execute();
 
         $data = $this->db->getAll();
+        return $data;
+    }
+
+    public function getSession($id){
+        $this->db->query("SELECT * FROM sessions WHERE id=:id ORDER BY id DESC");
+        $this->db->bind("id", $id);
+        $this->db->execute();
+
+        $data = $this->db->getSingle();
         return $data;
     }
 
