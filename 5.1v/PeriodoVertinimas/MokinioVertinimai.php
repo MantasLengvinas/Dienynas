@@ -12,9 +12,10 @@ $template->subjects = $s->getAllSubjects($_SESSION['username']);
 
 $template->school = $_SESSION['school'];
 $template->title = 'Mokinio laikotarpio vertinimai';
-
 $template->firstname = $_SESSION['firstname'];
 $template->lastname = $_SESSION['lastname'];
 $template->role = $_SESSION['role'];
+$template->sy = sy;
+$template->version = version;
 
 echo $template;

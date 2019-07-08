@@ -8,7 +8,7 @@
     </div>
     <div class="d-flex flex-column">
 
-        <label>Pasirinkite mokinį</label>
+        <label>Mokinys</label>
             <div class="p-2">
                 
                 <select class="p-2" name="student" id="student">

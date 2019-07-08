@@ -10,6 +10,5 @@ $subjects = $s->getAllSubjects($_SESSION['username']);
 $template->subjects = $subjects;
 $template->period = $period;
 $template->p = $p;
-$template->description = $p->setPeriodDesc($period);
 
 echo $template;

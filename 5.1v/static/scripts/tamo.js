@@ -65,6 +65,20 @@ let subjects = (id) => {
         });
 }
 
+let sessions = (id) => {
+    startLoading();
+    $('.date_selector div').removeClass('date_active');
+    $(id).parent().addClass('date_active');
+    $.ajax({
+            type: 'GET',
+            url: '../Admin/Sessions.php',
+        })
+        .done(function (data) {
+            $('#admin_content').html(data);
+            stopLoading();
+        });
+}
+
 let moreInfo = id => {
     $.ajax({
             type: 'GET',
@@ -298,9 +312,28 @@ let scrollTimeTable = (metai, menuo) => {
     }
 }
 
-let loadPeriodTable = () => {
+let setPeriodDesc = (period, data) => {
+
+    let name;
+
+    switch(period){
+        case '0':
+            name = 'Metinis';
+        break;
+        case '1':
+            name = `1 pusmetis, ${data[0]}`;
+        break;
+        case '2':
+            name = `2 pusmetis, ${data[1]}`;
+    }
+
+    $('#header_description').html(name);
+}
+
+let loadPeriodTable = (data) => {
     startLoading();
     let period = $('#laikotarpis').val();
+    setPeriodDesc(period, data);
     let url = '../PeriodoVertinimas/periodTable.php';
 
     $.post({

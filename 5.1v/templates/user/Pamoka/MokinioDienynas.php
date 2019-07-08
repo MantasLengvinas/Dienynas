@@ -9,6 +9,7 @@
             <div class="page_header">
                 <div class="row">
                     <div class="col-md-10"><h3><?=$title?></h3></div>
+                    <div class="col-md-4 text-right"><a title="Didinti / mažinti" id="resize_button" class="c_btn utility no-text" onclick="toggle_fullscreen()"><i class="fa fa-expand" style="font-size: 15px;"></i><span class="hidden">Didinti</span></a></div>
                 </div>
             </div>        
             
@@ -27,6 +28,7 @@
                                 <div id="9" class="hidden" style="display:inline-block;padding:5px;font-weight:bold;"><a style="text-decoration:none;" data-menuo="5" data-metai="2019" href="javascript:void(0);" onclick="loadTable(this);">2019-05</a></div>
                                 <div id="10" class="hidden" style="display:inline-block;padding:5px;font-weight:bold;"><a style="text-decoration:none;" data-menuo="6" data-metai="2019" href="javascript:void(0);" onclick="loadTable(this);">2019-06</a></div>
                                 <div id="10" class="hidden" style="display:inline-block;padding:5px;font-weight:bold;"><a style="text-decoration:none;" data-menuo="7" data-metai="2019" href="javascript:void(0);" onclick="loadTable(this);">2019-07</a></div>
+                                <div id="10" class="hidden" style="display:inline-block;padding:5px;font-weight:bold;"><a style="text-decoration:none;" data-menuo="8" data-metai="2019" href="javascript:void(0);" onclick="loadTable(this);">2019-08</a></div>
                         </div>
                     </div>
                 </div>
@@ -154,6 +156,27 @@
         })
     });
 
+    function toggle_fullscreen() {
+            if ($("#body_section > .col-md-14").length > 0) {
+                $("#body_section > .col-md-14").removeClass("col-md-14").addClass("col-md-11");
+                $("#scrollable_dienynas").css("width", "765px");
+                $("#timetable_content").data("tb-width", "765px");
+                $("#resize_button span").text("Didinti");
+                $("#resize_button i").removeClass("fa-compress-alt").addClass("fa-expand-alt");
+            }
+            else {
+                $("#body_section > .col-md-11").removeClass("col-md-11").addClass("col-md-14");
+                $("#scrollable_dienynas").css("width", "980px");
+                $("#timetable_content").data("tb-width", "980px");
+                $("#resize_button span").text("Mažinti");
+                $("#resize_button i").removeClass("fa-expand-alt").addClass("fa-compress-alt");
+            }
+            $("#body_section > .col-md-3").toggleClass("hidden");
+        }
+
 </script>
 
 <?php include_once '../../../inc/footer.php'; ?>
+
+
+

@@ -9,19 +9,6 @@ class Period {
         $this->s = new Subject;
     }
 
-    public function setPeriodDesc($period){
-        switch($period){
-            case 0:
-                return 'Metinis';
-            break;
-            case 1:
-                return '1 pusmetis, 2018-09-03 - 2019-01-25';
-            break;
-            case 2:
-                return '2 pusmetis, 2018-01-26 - 2019-06-21';
-        }
-    }
-
     public function rowHeight($string){
         if(strlen($string) >= 40){
             return '67';
@@ -75,9 +62,17 @@ class Period {
 
     public function roundedAvg($period, $subject, $username){
         $avg = $this->subjectAvg($period, $subject, $username);
+        $ts1 = strtotime(period_data[1]);
+        $ts2 = strtotime(period_data[3]);
 
         if($avg != 0){
-            return round($avg);
+            if($period == 1 && time() > $ts1){
+                return round($avg);
+            }
+            else if($period == 2 && time() > $ts2){
+                return round($avg);
+            }
+            
         }
          
     }

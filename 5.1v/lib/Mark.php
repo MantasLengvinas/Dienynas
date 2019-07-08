@@ -66,11 +66,16 @@ class Mark{
 
     public function uploadMark($uname, $subj, $year, $month, $day, $mark, $type){
         $period = 0;
-        if($month >= 9){
-            $period = 1;
-        }else{
+        $ts = strtotime('1/25/2019 0:0');
+        $mts = strtotime(''.$month.'/'.$day.'/'.$year.' 0:0');
+        if($mts > $ts){
             $period = 2;
         }
+        else{
+            $period = 1;
+        }
+
+        echo $ts.' '.$mts.' ';
         $this->db->query("INSERT INTO marks (student_username, subject, year, month, day, mark, type, period) VALUES (:student_username, :subject, :year, :month, :day, :mark, :type, :period)");
         $this->db->bind("student_username", $uname);
         $this->db->bind("subject", $subj);

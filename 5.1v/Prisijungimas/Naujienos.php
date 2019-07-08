@@ -8,5 +8,7 @@ $template->school = $_SESSION['school'];
 $template->firstname = $_SESSION['firstname'];
 $template->lastname = $_SESSION['lastname'];
 $template->role = $_SESSION['role'];
+$template->sy = sy;
+$template->version = version;
 
 echo $template;

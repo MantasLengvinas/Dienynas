@@ -1,6 +1,6 @@
 <?php 
-    include_once 'inc/header.php';
-    include_once 'inc/menu.php';
+    include_once '../../inc/header.php';
+    include_once '../../inc/menu.php';
 ?>
 
 <!-- Body section -->
@@ -20,6 +20,7 @@
                                 <div style="display:inline-block;padding:5px;font-weight:bold;"><a id="users" style="text-decoration:none;" href="javascript:void(0);" onclick="users(this);">Vartotojai</a></div>
                                 <div style="display:inline-block;padding:5px;font-weight:bold;"><a id="marks" style="text-decoration:none;" href="javascript:void(0);" onclick="marks(this);">Pažymiai</a></div>
                                 <div style="display:inline-block;padding:5px;font-weight:bold;"><a id="subjects" style="text-decoration:none;" href="javascript:void(0);" onclick="subjects(this);">Dalykai</a></div>
+                                <div style="display:inline-block;padding:5px;font-weight:bold;"><a id="sessions" style="text-decoration:none;" href="javascript:void(0);" onclick="sessions(this);">Prisijungimai</a></div>
                         </div>
                     </div>
                 </div>
@@ -40,5 +41,5 @@
             })
         </script>
 
-<?php include_once 'inc/footer.php';?>
+<?php include_once '../../inc/footer.php';?>
 

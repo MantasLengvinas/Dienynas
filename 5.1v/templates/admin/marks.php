@@ -5,7 +5,7 @@
     <div class="col-md-14">
         <div class="d-flex flex-column" style="margin: 0 0 0 10px;">
 
-        <label>Pasirinkite mokinį</label>
+        <label>Mokinys</label>
             <div class="p-2">
                 
                 <select class="p-2" name="student" id="student" onchange="loadMarksContent();">

@@ -3,12 +3,16 @@
     include_once '../../../inc/menu.php';
 ?>
 
+<script>
+    let data = <?=json_encode(period_desc)?>;
+</script>
+
 <!-- Body section -->
 <div id="c_main">
             
 
 <div class="page_header">
-        <!--
+<!--         
     <div class="btn-group">
         <button type="button" class="btn">Grįžti atgal</button>
         <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -25,15 +29,16 @@
     </div>
         -->
     <h3><?=$title?></h3>
-        <div class="header_description">
-            <!-- <?php//$description?> -->
+        <div class="header_description" id="header_description">
+            
         </div>
 </div>
 <div class="c_block options">
     <label>Laikotarpis</label>
-<select id="laikotarpis" name="laikotarpis" onchange="loadPeriodTable();"><option selected="selected" value="1">1 pusmetis</option>
-<option value="2">2 pusmetis</option>
-<option value="0">Metinis</option>
+<select id="laikotarpis" name="laikotarpis" onchange="loadPeriodTable(data);">
+    <option selected="selected" value="1">1 pusmetis</option>
+    <option value="2">2 pusmetis</option>
+    <!-- <option value="0">Metinis</option> -->
 </select></div>
 
 
@@ -51,7 +56,6 @@
 
 <div style="margin-bottom:10px;">
 
-
         <div><b>Pagr.</b> - Pagrindinis</div>
 </div>
 
@@ -61,7 +65,7 @@
 
         <script>
             $(document).ready(function(){
-                loadPeriodTable();
+                loadPeriodTable(data);
             })
         </script>
 

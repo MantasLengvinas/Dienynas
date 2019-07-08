@@ -4,12 +4,14 @@ class User{
     private $db; //db class
     private $m; //mark class
     private $s; //subject class
+    private $session;
     private $role;
 
     public function __construct(){
         $this->db = new Database;
         $this->m = new Mark;
         $this->s = new Subject;
+        $this->session = new Session;
     }
 
     public function roleTitle($role){
@@ -61,6 +63,10 @@ class User{
                 $_SESSION['role'] = $this->roleTitle($this->role);
                 
                 $_SESSION['logged_in'] = true;
+                $ip = $this->session->getIP();
+                $mac = $this->session->getMac();
+                $this->session->saveSession($username, $ip, $mac);
+                $this->session->deleteSessions();
                 return true;
             }
             else{

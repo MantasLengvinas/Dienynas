@@ -3,9 +3,11 @@
                                 
                                 <select class="p-2" name="year" id="year">
                                     <option value="0">-</option>
-                                    <option value="2018">2018</option>
-                                    <option value="2019">2019</option>
-                                    <option value="2020">2020</option>
+                                    <?php 
+                                        foreach($years as $year){
+                                            echo '<option value="'.$year.'">'.$year.'</option>';
+                                        }
+                                    ?>
                                 </select>
                             </div>
                         <label>Mėnuo</label>
