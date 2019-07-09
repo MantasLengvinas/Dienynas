@@ -1,5 +1,5 @@
 
-<div id="myModal" style="position: absolute; height: 400px; width: 400px;" tabindex="-1" role="dialog" class="modal show ui-dialog ui-corner-all ui-widget ui-widget-content ui-front no-close2" aria-describedby="modal_dialog_window" aria-labelledby="ui-id-2"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-2" class="ui-dialog-title">Išsami informacija</span><button type="button" class="c_btn secondary right" id="closeModalBtn" style="margin-right: 5px;"><i class="fa fa-icon fa-close fa-2x"></i></button></div><div id="modal_dialog_window" class="ui-dialog-content ui-widget-content" style="z-index: 9999; width: auto; min-height: 97px; max-height: none; height: auto;">
+<div id="myModal" style="position: absolute; height: 470px; width: 400px;" tabindex="-1" role="dialog" class="modal show ui-dialog ui-corner-all ui-widget ui-widget-content ui-front no-close2" aria-describedby="modal_dialog_window" aria-labelledby="ui-id-2"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix ui-draggable-handle"><span id="ui-id-2" class="ui-dialog-title">Išsami informacija</span><button type="button" class="c_btn secondary right" id="closeModalBtn" style="margin-right: 5px;"><i class="fa fa-icon fa-close fa-2x"></i></button></div><div id="modal_dialog_window" class="ui-dialog-content ui-widget-content" style="z-index: 9999; width: auto; min-height: 97px; max-height: none; height: auto;">
 
     <div class="page_header">
         <h4>
@@ -40,6 +40,9 @@
             <li><b>Tipas: </b> <i><?=$data->type?></i></li>
             <li><b>Šalis: </b> <i><?=$data->country_name?></i></li>
             <li><b>Miestas: </b> <i><?=$data->city?></i></li>
+            <li><b>Pašto kodas: </b> <i><?=$data->zip?></i></li>
+            <li><b>Ilguma: </b> <i><?=$data->longitude?></i></li>
+            <li><b>Platuma: </b> <i><?=$data->latitude?></i></li>
         </ul>
     </div>
           

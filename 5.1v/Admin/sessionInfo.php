@@ -5,16 +5,19 @@
     $session = new Session;
     $u = new User;
 
-    $apikey = 'f1cd85b353451f17d5d642c0cd336825';
+    $apikey = '9d5ff06b30c75b12a4baf0fbdf0b1304';
     $sessionID = $_GET['id'];
 
     $template->selected = $session->getSession($sessionID);
     $template->user = $u->getUserByUsername($template->selected->username);
     $roleid = $template->user->role;
     $template->role = $u->roleTitle($roleid);
-    $template->data = json_decode(file_get_contents('http://api.ipstack.com/'.$template->selected->ip.'?access_key='.$apikey));
-
-
+    $ch = curl_init('http://api.ipapi.com/'.$template->selected->ip.'?access_key='.$apikey.'');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $json = curl_exec($ch);
+    $template->data = json_decode($json);
+    print_r($template->data);
+    
     echo $template;
 
 ?>
