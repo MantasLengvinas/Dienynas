@@ -12,11 +12,10 @@
     $template->user = $u->getUserByUsername($template->selected->username);
     $roleid = $template->user->role;
     $template->role = $u->roleTitle($roleid);
-    $ch = curl_init('http://api.ipapi.com/'.$template->selected->ip.'?access_key='.$apikey.'');
+    $ch = curl_init('http://api.ipapi.com/90.131.46.34?access_key='.$apikey.'');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $json = curl_exec($ch);
-    $template->data = json_decode($json);
-    print_r($template->data);
+    $template->data = json_decode($json, true);
     
     echo $template;
 
