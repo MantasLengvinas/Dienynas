@@ -2,12 +2,12 @@
 
 
 <div class="row">
-    <div class="col-lg-10" style="height: auto; max-height: 250px; overflow-y: auto;">
-    <div style="margin: 10px 0 10px 0;">
+<div style="margin: 10px 0 10px 10px;">
        <div style="height: 15px;">
           <label style="float: left;"><b>Prisijungimai</b></label>
        </div>     
     </div>
+    <div class="col-lg-10" style="height: auto; max-height: 350px; overflow-y: auto;">
         <table class="dienynas" >
             <thead><tr>
                 <td style="width: 196.25px;">Vartojo vardas</td>

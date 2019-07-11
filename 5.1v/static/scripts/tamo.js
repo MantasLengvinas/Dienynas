@@ -230,12 +230,11 @@ let loadMarksContent = () => {
 let periodData = () => {
     startLoading();
     let username = $("#student").val();
+    let data = {uid: username};
 
     $.get({
             url: '../Admin/periodData.php',
-            data: {
-                uid: username
-            }
+            data: data
         })
         .done(function (data) {
             $("#periodData-response").html(data);
@@ -245,11 +244,12 @@ let periodData = () => {
 }
 
 let sessionInfo = (id) =>{
+
+    let data = {id: id};
+
     $.ajax({
         type: 'GET',
-        data: {
-            id: id
-        },
+        data: data,
         url: '../Admin/sessionInfo.php'
     })
     .done(function (data) {
@@ -258,7 +258,7 @@ let sessionInfo = (id) =>{
         closeBtn.onclick = function () {
             showModal();
         }
-    })
+    });
 }
 
 //User requests

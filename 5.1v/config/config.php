@@ -18,3 +18,4 @@ define('period_data', array(
     '1/26/2019 0:0',
     '6/21/2019 0:0'
 ));
+define('api_key', '9d5ff06b30c75b12a4baf0fbdf0b1304');
