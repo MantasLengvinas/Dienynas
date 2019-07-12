@@ -34,7 +34,7 @@ class Session{
         $this->db->bind('username', $username);
         $this->db->bind('ip', $ip);
         $this->db->bind('delete_at', $delete);
-        $logMsg = "Log: [SESSION] IP: ".$ip." requested username: ".$username." request time: ".$sessionTime."\n";
+        $logMsg = "Log: [SESSION_STARTED] IP: ".$ip." requested username: ".$username." request time: ".$sessionTime."\n";
         
         file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
         $this->db->execute();
