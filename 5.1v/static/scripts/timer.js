@@ -1,5 +1,5 @@
 var counter = 0;
-var timeLeft = 3599;
+var timeLeft = 10;
 
 function convertSeconds(s){
     var min = floor(s /60);
@@ -21,7 +21,7 @@ function setup(){
         timer.html(convertSeconds(timeLeft - counter));
         if(counter == timeLeft){
             clearInterval(interval);
-            window.location.href = "../config/logout";
+            window.location.href = "../Prisijungimas/logout";
         }
 
     }
