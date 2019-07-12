@@ -23,10 +23,9 @@ function stopLoading() {
 
 //Admin requests
 
-let users = (id) => {
+let users = () => {
     startLoading();
-    $('.date_selector div').removeClass('date_active');
-    $(id).parent().addClass('date_active');
+    $("#admin_page_header").html('Vartotojai');
     $.ajax({
             type: 'GET',
             url: '../Admin/Users.php',
@@ -37,10 +36,9 @@ let users = (id) => {
         });
 }
 
-let marks = (id) => {
+let marks = () => {
     startLoading();
-    $('.date_selector div').removeClass('date_active');
-    $(id).parent().addClass('date_active');
+    $("#admin_page_header").html('Pažymiai');
     $.ajax({
             type: 'GET',
             url: '../Admin/Marks.php',
@@ -51,10 +49,9 @@ let marks = (id) => {
         });
 }
 
-let subjects = (id) => {
+let subjects = () => {
     startLoading();
-    $('.date_selector div').removeClass('date_active');
-    $(id).parent().addClass('date_active');
+    $("#admin_page_header").html('Dalykai');
     $.ajax({
             type: 'GET',
             url: '../Admin/Subjects.php',
@@ -65,13 +62,25 @@ let subjects = (id) => {
         });
 }
 
-let sessions = (id) => {
+let sessions = () => {
     startLoading();
-    $('.date_selector div').removeClass('date_active');
-    $(id).parent().addClass('date_active');
+    $("#admin_page_header").html('Prisijungimai');
     $.ajax({
             type: 'GET',
             url: '../Admin/Sessions.php',
+        })
+        .done(function (data) {
+            $('#admin_content').html(data);
+            stopLoading();
+        });
+}
+
+let logs = () => {
+    startLoading();
+    $("#admin_page_header").html('Žurnalas');
+    $.ajax({
+            type: 'GET',
+            url: '../Admin/Logs.php',
         })
         .done(function (data) {
             $('#admin_content').html(data);

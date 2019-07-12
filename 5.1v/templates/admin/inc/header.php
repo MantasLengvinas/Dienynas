@@ -10,6 +10,7 @@
     <title></title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta http-equiv="content-language" content="lt">
+    <meta charset="ISO 8859-10">
     <link rel="shortcut icon" href="../static/images/favicon.ico">
 
     <link href="../static/styles/jquery.ui.css" rel="stylesheet">
@@ -92,7 +93,7 @@
                     
 <div class="academic_year_section">
    
-            <div class="academic_year"><span>2018-2019 m.m.</span></div>
+            <div class="academic_year"><span><?=$sy?> m.m.</span></div>
 </div>
                 </div>
 
@@ -101,7 +102,7 @@
 
                 <div class="" style="display:inline-block;height:40px;vertical-align:middle;width:100%;padding-right:15px;font-weight:600">
                     
-                    <span style="float:right;line-height:40px;"> Apkrovimas:<a id="sysInfo" href="/SysinfoDetails"><span class="sysinfo-text">NORMALUS</span><span id="sysinfo-icon" class="fa fa-circle" style="color: #61d462;"></span><span id="sysinfo-loading" class="hidden"><i class="fa fa-spinner fa-pulse fa-lg fa-fw"></i></span></a></span>
+                    <span style="float:right;line-height:40px;"> Apkrovimas:<a id="sysInfo" href="javascript:void(0);"><span class="sysinfo-text">NORMALUS</span><span id="sysinfo-icon" class="fa fa-circle" style="color: #61d462;"></span><span id="sysinfo-loading" class="hidden"><i class="fa fa-spinner fa-pulse fa-lg fa-fw"></i></span></a></span>
                 </div>
 
             </div>
@@ -111,7 +112,7 @@
 <div id="header_section" class="row">
     <div class="col-md-14">
         <div style="height:88px;background:white;">
-            <a href="../Admin/Home"><img src="../static/images/logo.png" style="margin:20px 15px; display:inline-block;float:left"></a>
+            <a href="#"><img src="../static/images/logo.png" style="margin:20px 15px; display:inline-block;float:left"></a>
             <div style="height:100%;display:block;float:right;margin-right:5px;">
 
                 
@@ -128,7 +129,7 @@
                                             <i id="arrowContainer" class="fa fa-caret-down drop_down_icon fa-lg" aria-hidden="true" style="color:#86b3cb"></i>
                                         </a>
                                         <div style="position:absolute;height:0;left:0">
-                                            <div class="c_select_options hidden auto_hide dropdown-content" id="myDropdown" style="width:300px;">                                                                                                                                                    <a href="/Prisijungimas/KeistiAplinka?kodas=MOK&amp;irasoId=666610&amp;istaigosId=1387">
+                                            <div class="c_select_options hidden auto_hide dropdown-content" id="myDropdown" style="width:300px;">                                                                                                                                                    <a href="javascript:void(0);">
                                                         <div class="c_select_options_item active">
 
                                                            

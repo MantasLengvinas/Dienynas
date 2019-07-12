@@ -42,8 +42,8 @@ class Subject{
         $this->db->execute();
 
         $log = "../log.txt";
-        $actionTime = date('Y-m-d h:i:sa');
-        $logMsg = "[SUBJECT_ADDED] for ".$username." by ".$_SESSION['username']." at: ".$actionTime."\n";      
+        $actionTime = date('Y-m-d H:i:s');
+        $logMsg = "[SUBJECT_ADDED] for <b>".$username."</b> by <b>".$_SESSION['username']."</b> at: <i>".$actionTime."</i>\n";      
         file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
 
         return 'Mokomasis dalykas sėkmingai įrašytas';

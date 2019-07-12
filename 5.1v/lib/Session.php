@@ -25,7 +25,7 @@ class Session{
     public function saveSession($username, $ip){
 
         $log = "../log.txt";
-        $sessionTime = date('Y-m-d h:i:sa');
+        $sessionTime = date('Y-m-d H:i:s');
         $curr = date('Y-m-d');
         $date = date_create($curr);
         date_add($date, date_interval_create_from_date_string('7 days'));
@@ -34,7 +34,7 @@ class Session{
         $this->db->bind('username', $username);
         $this->db->bind('ip', $ip);
         $this->db->bind('delete_at', $delete);
-        $logMsg = "[SESSION_STARTED] IP: ".$ip." requested username: ".$username." request time: \n";
+        $logMsg = "[SESSION_STARTED] IP: <b>".$ip."</b> username: <b>".$username."</b> at: <i>".$sessionTime."</i>\n";
         
         file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
         $this->db->execute();

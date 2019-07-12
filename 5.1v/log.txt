@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 [SESSION_STARTED] IP: ::1 requested username: jmantas request time: 
+=======
+<b style="position: absolute;left: 50%;transform: translateX(-50%);">Veiksmų žurnalas</b>
+>>>>>>> admin_view
