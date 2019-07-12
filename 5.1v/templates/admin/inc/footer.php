@@ -51,7 +51,7 @@
     <div class="col-md-14">
         <div style="background-color:white;height:30px;">
             <div id="footer">
-    <p>© 2019 JML. Visos teisės saugomos. v5.1</p>
+    <p>© 2019 JML. Visos teisės saugomos. <?=$version?></p>
 </div>
         </div>
     </div>

@@ -3,8 +3,8 @@
 <?php 
     $user = new User;
     $log = "../log.txt";
-    $sessionTime = date('Y-m-d h:i:sa');
-    $logMsg = "Log: [SESSION_EXPIRED] session username: ".$_SESSION['username']." expiration time: ".$sessionTime."\n";      
+    $sessionTime = date('Y-m-d H:i:s');
+    $logMsg = "[SESSION_EXPIRED] username: <b>".$_SESSION['username']."</b> at: <i>".$sessionTime."</i>\n";      
     file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
 
     $user->Logout();

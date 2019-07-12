@@ -1,8 +1,8 @@
 <div id="body_section" class="row row-table" style="position:relative">
 
-    <div class="col-md-3 full_height_col" style="padding-right:0;padding-left:0;">
+    <div class="col-md-3 full_height_col" style="padding-right:0;padding-left:0;border-right: solid 1px #f1f2eb;">
         <div id="sidebar">
-            <div id="s_menu">
+            <div id="s_menu" style="">
                     <style>
         .menu_badge {
             font-size: 8px;
@@ -21,7 +21,7 @@
 
 <ul>
 
-            <li data-name="naujienos">
+            <!-- <li data-name="naujienos">
                 <div style="position:relative" class="s_menu_title icon_news">
                         <span class="menu_icon" style="background: url('../static/images/news.png')"></span>
                    
@@ -94,51 +94,35 @@
     </li>
 
 
-
+ -->
 
             <li data-name="mano.dienynas.mok.tevglo">
-                <div style="position:relative" class="s_menu_title icon_journal">
-                        <span class="menu_icon" style="background: url('../static/images/diary.png')"></span>
+                <div style="position:relative" class="s_menu_title">
+                        <span class="menu_icon" style=""></span>
                    
-                        <span>Mano dienynas</span>
+                        <span>Administracijos meniu</span>
                                     </div>
                     <ol id="selects">
 
 
     <li style="position:relative" class="">
-        <a href="javascript:void(0);">Tvarkaraštis</a>
+        <a href="javascript:void(0);" onclick="users();">Vartotojai</a>
     </li>
 
     <li style="position:relative" class="">
-        <a id="men" href="../Pamoka/MokinioDienynas">Dienynas</a>
+        <a href="javascript:void(0);" onclick="marks();">Pažymiai</a>
     </li>
 
     <li style="position:relative" class="">
-        <a href="javascript:void(0);">Pamokos</a>
+        <a href="javascript:void(0);" onclick="subjects();">Dalykai</a>
     </li>
     
     <li style="position:relative" class="">
-        <a href="javascript:void(0);">Namų darbai</a>
+        <a href="javascript:void(0);" onclick="sessions();">Prisijungimai</a>
     </li>
 
     <li style="position:relative" class="">
-        <a href="javascript:void(0);">Atsiskaitomieji darbai</a>
-    </li>
-
-    <li style="position:relative" class="">
-        <a href="javascript:void(0);">Pagyrimai/ Pastabos</a>
-    </li>
-
-    <li style="position:relative" class="">
-        <a href="../PeriodoVertinimas/MokinioVertinimai">Trimestrai / Pusmečiai</a>
-    </li>
-
-    <li style="position:relative" class="">
-        <a href="javascript:void(0);">Vidurkių skaičiavimas</a>
-    </li>
-
-    <li style="position:relative" class="">
-        <a href="javascript:void(0);">Mano knygos</a>
+    <a href="javascript:void(0);" onclick="logs();">Žurnalas</a>
     </li>
 
                     </ol>
@@ -147,7 +131,7 @@
 
 
 
-            <li data-name="ipazanga.mokinys">
+            <!-- <li data-name="ipazanga.mokinys">
                 <div style="position:relative" class="s_menu_title ">
                         <span class="menu_icon"></span>
                    
@@ -233,7 +217,7 @@
         <a href="javascript:void(0);">Atostogų datos</a>
     </li>
                     </ol>
-            </li>
+            </li> -->
 </ul>
 
  <div id="sidebar_spacer"></div>

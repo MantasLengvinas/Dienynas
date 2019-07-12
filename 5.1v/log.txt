@@ -1,15 +1,1 @@
-Log: [SESSION] IP: ::1 requested username: jmantas request time: 2019-07-12 11:33:01am
-Log: [SESSION] IP: ::1 requested username: jmantas request time: 2019-07-12 11:33:22am
-Log: [SESSION_EXPIRED] session username: jmantas request time: 2019-07-12 11:37:00am
-Log: [SESSION] IP: ::1 requested username: 181339 request time: 2019-07-12 11:37:06am
-Log: [SESSION_EXPIRED] session username: 181339 expiration time: 2019-07-12 11:47:48am
-Log: [SESSION] IP: ::1 requested username: jmantas request time: 2019-07-12 11:48:09am
-Log: [USER_CREATED] test created by jmantas at: 2019-07-12 11:48:31am
-Log: [USER_DELETED] test deleted by jmantas at: 2019-07-12 11:48:53am
-Log: [SUBJECT_ADDED] for 181339 by jmantas at: 2019-07-12 11:49:14am
-Log: [USER_DELETED] 181339 deleted by jmantas at: 2019-07-12 12:02:55pm
-Log: [SESSION_EXPIRED] session username: jmantas expiration time: 2019-07-12 12:04:59pm
-Log: [SESSION] IP: ::1 requested username: jmantas request time: 2019-07-12 12:05:54pm
-Log: [USER_CREATED] a created by jmantas at: 2019-07-12 12:06:19pm
-Log: [SUBJECT_ADDED] for a by jmantas at: 2019-07-12 12:06:43pm
-Log: [MARK_ADDED] for a by jmantas at: 2019-07-12 12:10:47pm
+<b style="position: absolute;left: 50%;transform: translateX(-50%);">Veiksmų žurnalas</b>

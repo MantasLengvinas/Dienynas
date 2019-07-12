@@ -159,8 +159,8 @@ class User{
             $this->db->execute();
 
             $log = "../log.txt";
-            $actionTime = date('Y-m-d h:i:sa');
-            $logMsg = "Log: [USER_CREATED] ".$username." created by ".$_SESSION['username']." at: ".$actionTime."\n";      
+            $actionTime = date('Y-m-d H:i:s');
+            $logMsg = "[USER_CREATED] <b>".$username."</b> created by <b>".$_SESSION['username']."</b> at: <i>".$actionTime."</i>\n";      
             file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
 
             return 'Vartotojas sėkmingai sukurtas!';
@@ -178,8 +178,8 @@ class User{
         $this->s->deleteSubjects($username);
 
         $log = "../log.txt";
-        $actionTime = date('Y-m-d h:i:sa');
-        $logMsg = "Log: [USER_DELETED] ".$username." deleted by ".$_SESSION['username']." at: ".$actionTime."\n";      
+        $actionTime = date('Y-m-d H:i:s');
+        $logMsg = "[USER_DELETED] <b>".$username."</b> by <b>".$_SESSION['username']."</b> at: <i>".$actionTime."</i>\n";      
         file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
 
         return 'Vartotojas sėkmingai ištrintas';
