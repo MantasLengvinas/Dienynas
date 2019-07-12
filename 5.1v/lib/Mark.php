@@ -62,9 +62,18 @@ class Mark{
         $this->db->query("DELETE FROM marks WHERE student_username = :username");
         $this->db->bind('username', $username);
         $this->db->execute();
+
+        $log = "../log.txt";
+        $actionTime = date('Y-m-d h:i:sa');
     }
 
-    public function uploadMark($uname, $subj, $year, $month, $day, $mark, $type){
+    public function uploadMark($username, $subj, $year, $month, $day, $mark, $type){
+
+        $log = "../log.txt";
+        $actionTime = date('Y-m-d h:i:sa');
+        $logMsg = "Log: [MARK_ADDED] for ".$username." by ".$_SESSION['username']." at: ".$actionTime."\n"; 
+        file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
+
         $period = 0;
         $ts = strtotime('1/25/2019 0:0');
         $mts = strtotime(''.$month.'/'.$day.'/'.$year.' 0:0');
@@ -75,9 +84,8 @@ class Mark{
             $period = 1;
         }
 
-        echo $ts.' '.$mts.' ';
         $this->db->query("INSERT INTO marks (student_username, subject, year, month, day, mark, type, period) VALUES (:student_username, :subject, :year, :month, :day, :mark, :type, :period)");
-        $this->db->bind("student_username", $uname);
+        $this->db->bind("student_username", $username);
         $this->db->bind("subject", $subj);
         $this->db->bind("year", $year);
         $this->db->bind("month", $month);

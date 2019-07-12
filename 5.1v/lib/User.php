@@ -158,6 +158,11 @@ class User{
 
             $this->db->execute();
 
+            $log = "../log.txt";
+            $actionTime = date('Y-m-d h:i:sa');
+            $logMsg = "Log: [USER_CREATED] ".$username." created by ".$_SESSION['username']." at: ".$actionTime."\n";      
+            file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
+
             return 'Vartotojas sėkmingai sukurtas!';
         }
         catch(PDOException $e){
@@ -171,6 +176,11 @@ class User{
         $this->db->execute();
         $this->m->deleteMarks($username);
         $this->s->deleteSubjects($username);
+
+        $log = "../log.txt";
+        $actionTime = date('Y-m-d h:i:sa');
+        $logMsg = "Log: [USER_DELETED] ".$username." deleted by ".$_SESSION['username']." at: ".$actionTime."\n";      
+        file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
 
         return 'Vartotojas sėkmingai ištrintas';
     }

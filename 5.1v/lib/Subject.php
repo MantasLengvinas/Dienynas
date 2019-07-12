@@ -41,6 +41,11 @@ class Subject{
         $this->db->bind('teacher', $teacher);
         $this->db->execute();
 
+        $log = "../log.txt";
+        $actionTime = date('Y-m-d h:i:sa');
+        $logMsg = "Log: [SUBJECT_ADDED] for ".$username." by ".$_SESSION['username']." at: ".$actionTime."\n";      
+        file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
+
         return 'Mokomasis dalykas sėkmingai įrašytas';
     }
 
@@ -48,6 +53,9 @@ class Subject{
         $this->db->query("DELETE FROM subjects WHERE student_username = :username");
         $this->db->bind('username', $username);
         $this->db->execute();
+
+        $log = "../log.txt";
+        $actionTime = date('Y-m-d h:i:sa');
     }
 
 }
