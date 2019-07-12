@@ -71,7 +71,7 @@ class Mark{
 
         $log = "../log.txt";
         $actionTime = date('Y-m-d h:i:sa');
-        $logMsg = "Log: [MARK_ADDED] for ".$username." by ".$_SESSION['username']." at: ".$actionTime."\n"; 
+        $logMsg = "[MARK_ADDED] for ".$username." by ".$_SESSION['username']." at: ".$actionTime."\n"; 
         file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
 
         $period = 0;
