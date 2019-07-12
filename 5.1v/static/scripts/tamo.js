@@ -88,6 +88,19 @@ let logs = () => {
         });
 }
 
+let siteInfo = () => {
+    startLoading();
+    $("#admin_page_header").html('Informacija');
+    $.ajax({
+            type: 'GET',
+            url: '../Admin/siteInfo.php',
+        })
+        .done(function (data) {
+            $('#admin_content').html(data);
+            stopLoading();
+        });
+}
+
 let moreInfo = id => {
     $.ajax({
             type: 'GET',

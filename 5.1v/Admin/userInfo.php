@@ -20,9 +20,9 @@
     $template->role = $user->roleTitle($roleid);
     
     if(sizeof($template->data[2]) == 0 && sizeof($template->data[1]) == 0){
-        $template->height = 330;
+        $template->height = 340;
     }else if(sizeof($template->data[2]) == 0 || sizeof($template->data[1]) == 0){
-        $template->height = 480;
+        $template->height = 500;
     }else if(sizeof($template->data[2]) > 0 && sizeof($template->data[1]) > 0){
         $template->height = 640;
     }

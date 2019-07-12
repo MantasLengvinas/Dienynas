@@ -1,5 +1,9 @@
-<<<<<<< HEAD
-[SESSION_STARTED] IP: ::1 requested username: jmantas request time: 
-=======
-<b style="position: absolute;left: 50%;transform: translateX(-50%);">Veiksmų žurnalas</b>
->>>>>>> admin_view
+<b style="position: absolute;left: 50%;transform: translateX(-50%);">Žurnalas</b>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>jmantas</b> at: <i>2019-07-12 20:10:43</i>
+[USER_CREATED] <b>181339</b> created by <b>jmantas</b> at: <i>2019-07-12 20:12:18</i>
+[SUBJECT_ADDED] for <b>181339</b> by <b>jmantas</b> at: <i>2019-07-12 20:22:58</i>
+[SUBJECT_ADDED] for <b>181339</b> by <b>jmantas</b> at: <i>2019-07-12 20:23:12</i>
+[SUBJECT_ADDED] for <b>181339</b> by <b>jmantas</b> at: <i>2019-07-12 20:23:32</i>
+[MARK_ADDED] for <b>181339</b> by <b>jmantas</b> at: <i>2019-07-12 20:39:23</i>
+[MARK_ADDED] for <b>181339</b> by <b>jmantas</b> at: <i>2019-07-12 20:40:21</i>
+[MARK_ADDED] for <b>181339</b> by <b>jmantas</b> at: <i>2019-07-12 20:40:43</i>

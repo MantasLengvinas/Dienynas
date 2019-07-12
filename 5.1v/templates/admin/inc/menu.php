@@ -125,6 +125,10 @@
     <a href="javascript:void(0);" onclick="logs();">Žurnalas</a>
     </li>
 
+    <li style="position:relative" class="">
+        <a href="javascript:void(0);" onclick="siteInfo();">Informacija</a>
+    </li>
+
                     </ol>
             </li>
 
