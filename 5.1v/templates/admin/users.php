@@ -1,11 +1,12 @@
 
 <div class="row">
-    <div class="col-lg-10" style="height: auto; max-height: 250px; overflow-y: auto;">
-    <div style="margin: 10px 0 10px 0;">
-       <div style="height: 15px;">
-          <label style="float: left;"><b>Visi vartotojai</b></label>
-       </div>     
+
+    <div class="col-lg-5">
+        <input type="text" placeholder="Ieškoti" name="user_search" onchange="searchUser(this.value);">
+        <a href="javascript:void(0)" class="btn c_btn" onclick="users();">Visi vartotojai</a>
     </div>
+
+    <div class="col-lg-10" style="height: auto; max-height: 250px; overflow-y: auto;">
         <table class="dienynas" >
             <thead><tr>
                 <td style="width: 150px;">Vartojo vardas</td>

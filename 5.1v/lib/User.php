@@ -107,6 +107,15 @@ class User{
         return $data;
     }
 
+    public function searchUser($input){
+        $this->db->query("SELECT * FROM users WHERE username LIKE '%$input%' OR firstname LIKE '%$input%' OR lastname LIKE '%$input%' ORDER BY id DESC");
+        $this->db->execute();
+
+        $data = $this->db->getAll();
+
+        return $data;
+    }
+
     public function getStudents(){
         $this->db->query("SELECT * FROM users WHERE role = :role ORDER BY id ASC");
         $this->db->bind('role', 0);

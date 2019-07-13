@@ -27,13 +27,13 @@ let users = () => {
     startLoading();
     $("#admin_page_header").html('Vartotojai');
     $.ajax({
-            type: 'GET',
-            url: '../Admin/Users.php',
-        })
-        .done(function (data) {
-            $('#admin_content').html(data);
-            stopLoading();
-        });
+        type: 'GET',
+        url: '../Admin/Users.php',
+    })
+    .done(function (data) {
+        $('#admin_content').html(data);
+        stopLoading();
+    });
 }
 
 let marks = () => {
@@ -166,6 +166,18 @@ let deleteUser = (id) => {
             reload();
         })
     }
+}
+
+let searchUser = (value) => {
+    $.ajax({
+        type: 'GET',
+        url: '../Admin/Users.php',
+        data: {value: value}
+    })
+    .done(function (data) {
+        $('#admin_content').html(data);
+        stopLoading();
+    });
 }
 
 let prepareMark = () => {
