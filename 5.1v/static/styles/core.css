@@ -9056,6 +9056,10 @@ div.recent-mark {
     border: solid 2px #87b4cc;
 }
 
+tr.current-user {
+    border: solid 2px #87b4cc;
+}
+
 .m_btn {
     font-size: 15px;
     color: #686868;

@@ -18,7 +18,7 @@
             </tr></thead>
             <tbody id="marks_content">
             <?php foreach($users as $user): ?>
-            <tr class="mark-holder" style="cursor: pointer;" name="moreInfo" onclick="moreInfo(<?=$user->id?>);">
+                <tr class="mark-holder <?php if($_SESSION['username'] === $user->username): ?>current-user<?php endif;?>" style="cursor: pointer;" name="moreInfo" onclick="moreInfo(<?=$user->id?>);">
                 <td><?=$user->username?></td>
                 <td><?=$user->firstname?></td>
                 <td><?=$user->lastname?></td>
