@@ -16,3 +16,10 @@
 [SESSION_EXPIRED] username: <b>181339</b> at: <i>2019-07-14 12:30:08</i>
 [SESSION_STARTED] IP: <b>::1</b> username: <b>jmantas</b> at: <i>2019-07-14 12:30:58</i>
 [USER_CREATED] <b>mok</b> created by <b>jmantas</b> at: <i>2019-07-14 12:31:39</i>
+[USER_DELETED] <b>mok</b> by <b>jmantas</b> at: <i>2019-07-14 12:49:37</i>
+[USER_DELETED] <b>jtest</b> by <b>jmantas</b> at: <i>2019-07-14 12:49:56</i>
+[SESSION_EXPIRED] username: <b>jmantas</b> at: <i>2019-07-14 12:50:22</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>181339</b> at: <i>2019-07-14 16:16:19</i>
+[SESSION_EXPIRED] username: <b>181339</b> at: <i>2019-07-14 16:17:28</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>jmantas</b> at: <i>2019-07-14 16:17:34</i>
+[USER_CREATED] <b>laimuons</b> created by <b>jmantas</b> at: <i>2019-07-14 18:12:27</i>

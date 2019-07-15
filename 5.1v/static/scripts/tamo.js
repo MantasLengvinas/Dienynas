@@ -169,6 +169,7 @@ let deleteUser = (id) => {
 }
 
 let searchUser = (value) => {
+    startLoading();
     $.ajax({
         type: 'GET',
         url: '../Admin/Users.php',
