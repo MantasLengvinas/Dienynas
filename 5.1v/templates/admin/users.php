@@ -57,8 +57,9 @@
             <div class="p-2">     
                 <input id="school" type="text" name="school" placeholder="Mokykla">
             </div>
-            <div class="p-2">     
-                <input id="role" type="text" name="role" placeholder="Statusas">
+            <div class="p-2" style="display: flex;  flex-direction: row;">     
+                <input id="role" type="checkbox" name="role" value="1">
+                <b style="margin: 4px 0 0 0;">Administratorius</b>
             </div>
             
             <button class="p-2 c_btn submit " name="submit" onclick="createUser();"><a style="color: #fff;">Įrašyti</a></button>

@@ -125,7 +125,12 @@ let createUser = () => {
     let email = $("#email").val();
     let password = $("#password").val();
     let school = $("#school").val();
-    let role = $("#role").val();
+    let re = document.getElementById('role');
+    let role = 0;
+
+    if(re.checked){
+        role = 1
+    }
 
     let data = {
         username: username,
@@ -138,14 +143,14 @@ let createUser = () => {
     };
 
     $.ajax({
-            type: 'POST',
-            data: data,
-            url: '../Admin/createUser.php'
-        })
-        .done(function(data) {
-            $("#user-response").html(data);
-            reload();
-        })
+        type: 'POST',
+        data: data,
+        url: '../Admin/createUser.php'
+    })
+    .done(function(data) {
+        $("#user-response").html(data);
+        reload();
+    })
 }
 
 let deleteUser = (id) => {
