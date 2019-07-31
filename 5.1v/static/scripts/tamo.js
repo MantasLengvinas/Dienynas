@@ -331,29 +331,8 @@ let loadTable = (id) => {
         })
         .done(function (data) {
             $('#timetable_content').html(data);
-            loadMarks(id);
             stopLoading();
             scrollTimeTable(metai, menuo);
-        });
-}
-
-let loadMarks = (id) => {
-    let metai = $(id).data('metai');
-    let menuo = $(id).data('menuo');
-    let data = {
-        metai: metai,
-        menuo: menuo
-    };
-    let url = '../Pamoka/DienynasMarks.php';
-    $.ajax({
-            type: 'POST',
-            url: url,
-            data: data,
-            dataType: 'JSON'
-        })
-        .done(function (data) {
-            writeMarks(data);
-            stopLoading();
         });
 }
 

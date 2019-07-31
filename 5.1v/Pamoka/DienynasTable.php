@@ -34,12 +34,13 @@ $startDay = $wday;
 $monthName = $info[1];
 $dayName = $info[0];
 
-$marks = $m->getAllMarks($_SESSION['username']);
+$marks = $m->getMonthMarks($_SESSION['username'], $menuo, $metai);
 $subjects = $s->getSubjectNames($_SESSION['username']);
 
 $template->monthName = $monthName[$menuo];
 $template->dayName = $dayName;
 $template->menuo = $menuo;
+$template->metai = $metai;
 $template->startDay = $startDay;
 $template->daysNumber = $daysNumber;
 $template->today = $today;

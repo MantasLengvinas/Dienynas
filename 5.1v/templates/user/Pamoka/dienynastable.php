@@ -1,3 +1,7 @@
+<?php 
+    $MO = new Mark;
+?>
+
 <div style="position:absolute;top:0;z-index:2;" id="">
     <table class="dienynas" id="">
         <thead>
@@ -41,15 +45,31 @@
         <tbody>');
             $counter = $startDay;
             $subjectNumber = 0;
+            $marks = array();
             foreach($subjects as $sbj){
                     echo '<tr><td class="dalykai">'.$sbj->subject.'</td>';
                     for($i = 1; $i <= $daysNumber; $i++){
-                        $id = 'm'.$menuo.'d'.$i.'s'.$subjectNumber;
-                        if($counter > 5){
-                            echo '<td class="weekend" id="'.$id.'"></td>';
+                        $mark = $MO->searchMark($metai, $menuo, $i, $subjectNumber);
+                        if($mark !== 0){
+                            if(!in_array($mark, $marks)){
+                                array_push($marks, $mark);
+                                $r = time() - strtotime($mark->uploaded) >= 432000 ? ' ' : 'recent-mark';
+                                $v = $mark->mark == '0' ? 'įsk.' : $mark->mark;
+                                if($counter > 5){
+                                    echo '<td class="weekend '.$r.'"><div style="padding:0;margin:0;vertical-align:middle">'.$v.'<span class="fa fa-circle '.$MO->typeColor($mark->type).'" style="vertical-align:middle;font-weight:bold;font-size:10px;padding-left:2px;margin-top:-2px"></span></div></td>';
+                                }
+                                else{
+                                    echo '<td class="'.$r.'"><div style="padding:0;margin:0;vertical-align:middle">'.$v.'<span class="fa fa-circle '.$MO->typeColor($mark->type).'" style="vertical-align:middle;font-weight:bold;font-size:10px;padding-left:2px;margin-top:-2px"></span></div></td>';
+                                }
+                            }
                         }
                         else{
-                            echo '<td id="'.$id.'"></td>';
+                            if($counter > 5){
+                                echo '<td class="weekend"></td>';
+                            }
+                            else{
+                                echo '<td></td>';
+                            }
                         }
                         if($counter >= 7){
                             $counter = 0;
@@ -57,7 +77,7 @@
                         if($i == $daysNumber){
                             $counter = $startDay - 1;
                         }
-                       $counter++;
+                        $counter++;
                     }
                     $subjectNumber++;
                     echo '</tr>';

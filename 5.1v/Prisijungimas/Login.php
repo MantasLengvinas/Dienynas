@@ -39,10 +39,11 @@ else{
                 }
             }
             else{
-                $template->errorMsgLogin = "Please check login details.";
+                $template->errorMsgLogin = "Neteisingas prisijungimo vardas ir/arba slaptažodis";
             }
         }
     }
 
+    $template->v = version;
     echo $template;
 }

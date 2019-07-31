@@ -24,7 +24,6 @@ session_start();
     <!--[if lt IE 8]>
         <link rel="stylesheet" type="text/css" href="/Content/css/main/old/ie-style.css"/>
     <![endif]-->
-    <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/api2/v1545073489967/recaptcha__lt.js"></script><script async="" src="https://www.google-analytics.com/analytics.js"></script><script src="https://www.google.com/recaptcha/api.js?hl=lt" async="" defer=""></script>
     
 </head>
 

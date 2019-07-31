@@ -97,4 +97,16 @@ class Mark{
 
         return 'Pažymys sėkmingai įrašytas!';
     }
+
+    public function searchMark($year, $month, $day, $subject){
+        $marks = $this->getMonthMarks($_SESSION['username'], $month, $year);
+        $response = 0;
+        foreach($marks as $mark){
+            if($mark->year == $year && $mark->month == $month && $mark->day == $day && $mark->subject == $subject){
+                $response = $mark;
+            }
+        }
+
+        return $response;
+    }
 }
