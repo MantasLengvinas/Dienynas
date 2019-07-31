@@ -151,7 +151,6 @@
         })
         .done(function(data){
             $('#timetable_content').html(data);
-            loadMarks(link);
             scrollTimeTable(metai, menuo);
         })
     });
