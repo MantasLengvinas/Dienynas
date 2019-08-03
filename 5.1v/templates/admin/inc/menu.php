@@ -20,20 +20,7 @@
     </style>
 
 <ul>
-
-            <!-- <li data-name="naujienos">
-                <div style="position:relative" class="s_menu_title icon_news">
-                        <span class="menu_icon" style="background: url('../static/images/news.png')"></span>
-                   
-                        <span><a href="javascript:void(0);">Naujienos</a></span>
-                                    </div>
-            </li>
-
-
-
-
-
-    <a href="javascript:void(0);">
+<!--    <a href="javascript:void(0);">
         <li data-name="kalba.lt">
             <div class="s_menu_title" style="background-color:#5e4534;">
                 <span class="menu_icon" style="background:none; margin:-2px 10px 0 10px;"><img src="../static/images/kalba_logo.png" style="height:28px;"></span>
@@ -96,26 +83,36 @@
 
  -->
 
-            <li data-name="mano.dienynas.mok.tevglo">
-                <div style="position:relative" class="s_menu_title">
-                        <span class="menu_icon" style=""></span>
-                   
-                        <span>Administracijos meniu</span>
-                                    </div>
-                    <ol id="selects">
+<li data-name="naujienos">
+    <div style="position:relative" class="s_menu_title icon_news">
+            <span class="menu_icon" style="background: url('../static/images/news.png')"></span>
+        
+            <span><a href="javascript:void(0);">Pagrindinis</a></span>
+    </div>
+    <ol id="selects">
+        <li style="position:relative" class="">
+            <a href="javascript:void(0);" onclick="users();">Vartotojai</a>
+        </li>
+
+        <li style="position:relative" class="">
+            <a href="javascript:void(0);" onclick="marks();">Pažymiai</a>
+        </li>
+
+        <li style="position:relative" class="">
+            <a href="javascript:void(0);" onclick="subjects();">Dalykai</a>
+        </li>
+    </ol>
 
 
-    <li style="position:relative" class="">
-        <a href="javascript:void(0);" onclick="users();">Vartotojai</a>
-    </li>
+</li>
 
-    <li style="position:relative" class="">
-        <a href="javascript:void(0);" onclick="marks();">Pažymiai</a>
-    </li>
-
-    <li style="position:relative" class="">
-        <a href="javascript:void(0);" onclick="subjects();">Dalykai</a>
-    </li>
+<li>
+<div style="position:relative" class="s_menu_title icon_info">
+        <span class="menu_icon" style="background: url('../static/images/more.png')"></span>
+    
+        <span>Kita</span>
+                    </div>
+    <ol id="selects">
     
     <li style="position:relative" class="">
         <a href="javascript:void(0);" onclick="sessions();">Prisijungimai</a>
