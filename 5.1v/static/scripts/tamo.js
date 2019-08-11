@@ -311,6 +311,8 @@ let monthInfo = [
     ]
 ];
 
+let dateSelectors = [];
+
 let loadTable = (id) => {
     startLoading();
     $('.date_selector div').removeClass('date_active');
@@ -346,6 +348,19 @@ let scrollTimeTable = (metai, menuo) => {
     if (metai == today_year && menuo == today_month) {
         $("#scrollable_dienynas").scrollLeft(28 * (today_day - 16));
     }
+}
+
+let dateSelector = () => {
+
+    var date = new Date();
+    let metai = date.getFullYear();
+    let menuo = date.getMonth() + 1;
+
+    $('.date_selector div').children('a').each(function () {
+        if ($(this).data('menuo') <= menuo || $(this).data('metai') < metai) {
+            $(this).parent().removeClass('hidden');
+        }
+    });
 }
 
 let setPeriodDesc = (period, data) => {

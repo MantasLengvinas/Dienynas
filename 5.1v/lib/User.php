@@ -29,6 +29,19 @@ class User{
         }
     }
 
+    public function roleShort($role){
+        switch($role){
+            case '0':
+                return 'mok';
+            break;
+            case '1':
+                return 'admin';
+            break;   
+            default:
+                return 'undefined'; 
+        }
+    }
+
     public function userExist($username){
         $this->db->query("SELECT username FROM users WHERE username=:un");
         $this->db->bind('un', $username);
@@ -63,6 +76,7 @@ class User{
                 $_SESSION['school'] = $data->school;
                 $this->role = $data->role;
                 $_SESSION['role'] = $this->roleTitle($this->role);
+                $_SESSION['ri'] = $this->roleShort($this->role);
                 
                 $_SESSION['logged_in'] = true;
                 $ip = $this->session->getIP();

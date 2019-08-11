@@ -3,24 +3,24 @@
     <div class="col-md-3 full_height_col" style="padding-right:0;padding-left:0;border-right: solid 1px #f1f2eb;">
         <div id="sidebar">
             <div id="s_menu" style="">
-                    <style>
-        .menu_badge {
-            font-size: 8px;
-            padding: 0px 3px;
-            line-height: 12px;
-            right: 4px;
-            top: 4px;
-            text-transform: uppercase;
-            position: absolute;
-            display: inline-block;
-            border-radius: 3px;
-            -moz-border-radius: 3px;
-            webkit-border-radius: 3px;
-        }
-    </style>
+                <style>
+                    .menu_badge {
+                        font-size: 8px;
+                        padding: 0px 3px;
+                        line-height: 12px;
+                        right: 4px;
+                        top: 4px;
+                        text-transform: uppercase;
+                        position: absolute;
+                        display: inline-block;
+                        border-radius: 3px;
+                        -moz-border-radius: 3px;
+                        webkit-border-radius: 3px;
+                    }
+                </style>
 
-<ul>
-<!--    <a href="javascript:void(0);">
+                <ul>
+                    <!--    <a href="javascript:void(0);">
         <li data-name="kalba.lt">
             <div class="s_menu_title" style="background-color:#5e4534;">
                 <span class="menu_icon" style="background:none; margin:-2px 10px 0 10px;"><img src="../static/images/kalba_logo.png" style="height:28px;"></span>
@@ -83,56 +83,56 @@
 
  -->
 
-<li data-name="naujienos">
-    <div style="position:relative" class="s_menu_title icon_news">
-            <span class="menu_icon" style="background: url('../static/images/news.png')"></span>
-        
-            <span><a href="javascript:void(0);">Pagrindinis</a></span>
-    </div>
-    <ol id="selects">
-        <li style="position:relative" class="">
-            <a href="javascript:void(0);" onclick="users();">Vartotojai</a>
-        </li>
+                    <li data-name="pagrindinis.admin">
+                        <div style="position:relative" class="s_menu_title icon_news">
+                            <span class="menu_icon" style="background: url('../static/images/news.png')"></span>
 
-        <li style="position:relative" class="">
-            <a href="javascript:void(0);" onclick="marks();">Pažymiai</a>
-        </li>
+                            <span><a href="javascript:void(0);">Pagrindinis</a></span>
+                        </div>
+                        <ol id="selects">
+                            <li style="position:relative" class="">
+                                <a href="javascript:void(0);" onclick="users();">Vartotojai</a>
+                            </li>
 
-        <li style="position:relative" class="">
-            <a href="javascript:void(0);" onclick="subjects();">Dalykai</a>
-        </li>
-    </ol>
+                            <li style="position:relative" class="">
+                                <a href="javascript:void(0);" onclick="marks();">Pažymiai</a>
+                            </li>
 
-
-</li>
-
-<li>
-<div style="position:relative" class="s_menu_title icon_info">
-        <span class="menu_icon" style="background: url('../static/images/more.png')"></span>
-    
-        <span>Kita</span>
-                    </div>
-    <ol id="selects">
-    
-    <li style="position:relative" class="">
-        <a href="javascript:void(0);" onclick="sessions();">Prisijungimai</a>
-    </li>
-
-    <li style="position:relative" class="">
-    <a href="javascript:void(0);" onclick="logs();">Žurnalas</a>
-    </li>
-
-    <li style="position:relative" class="">
-        <a href="javascript:void(0);" onclick="siteInfo();">Informacija</a>
-    </li>
-
-                    </ol>
-            </li>
+                            <li style="position:relative" class="">
+                                <a href="javascript:void(0);" onclick="subjects();">Dalykai</a>
+                            </li>
+                        </ol>
 
 
+                    </li>
+
+                    <li data-name="more.admin">
+                        <div style="position:relative" class="s_menu_title icon_info">
+                            <span class="menu_icon" style="background: url('../static/images/more.png')"></span>
+
+                            <span>Kita</span>
+                        </div>
+                        <ol id="selects">
+
+                            <li style="position:relative" class="">
+                                <a href="javascript:void(0);" onclick="sessions();">Prisijungimai</a>
+                            </li>
+
+                            <li style="position:relative" class="">
+                                <a href="javascript:void(0);" onclick="logs();">Žurnalas</a>
+                            </li>
+
+                            <li style="position:relative" class="">
+                                <a href="javascript:void(0);" onclick="siteInfo();">Informacija</a>
+                            </li>
+
+                        </ol>
+                    </li>
 
 
-            <!-- <li data-name="ipazanga.mokinys">
+
+
+                    <!-- <li data-name="ipazanga.mokinys">
                 <div style="position:relative" class="s_menu_title ">
                         <span class="menu_icon"></span>
                    
@@ -219,20 +219,21 @@
     </li>
                     </ol>
             </li> -->
-</ul>
+                </ul>
 
- <div id="sidebar_spacer"></div>
+                <div id="sidebar_spacer"></div>
             </div>
         </div>
     </div>
     <div class="col-md-11 full_height_col" style="padding-bottom:20px;">
         <div class="global_search_container">
-    <form id="c_search_form" action="">
-        <input id="search_input" name="search_input" type="text" value="Ieškokite vardo arba pavardės" class="ui-autocomplete-input" autocomplete="off">
-    </form>
-</div>
+            <form id="c_search_form" action="">
+                <input id="search_input" name="search_input" type="text" value="Ieškokite vardo arba pavardės"
+                    class="ui-autocomplete-input" autocomplete="off">
+            </form>
+        </div>
 
-<!-- <script>
+        <!-- <script>
     var date = new Date();
     var thisMonth = date.getMonth() + 1;
     let monthName = [0, 'sausis', 'vasaris', 'kovas', 'balandis', 'geguze', 'birzelis', 'liepa', 'rugpjutis', 'rugsejis', 'spalis', 'lapkritis', 'gruodis'];
