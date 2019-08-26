@@ -366,7 +366,6 @@ let dateSelector = () => {
         let dsts = toTimestamp(`${$(this).data('metai')} ${$(this).data('menuo')} 1 0:0:0`);
         let cts = toTimestamp(`${metai} ${menuo} ${day} 0:0:0`);
         
-        console.log(date.getDate());
         if (dsts <= cts) {
             $(this).parent().removeClass('hidden');
         }
