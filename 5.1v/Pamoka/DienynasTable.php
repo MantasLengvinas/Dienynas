@@ -4,7 +4,7 @@
 
 $m = new Mark;
 $s = new Subject;
-$template = new Template('../templates/user/Pamoka/DienynasTable.php');
+$template = new Template('../templates/user/Pamoka/dienynastable.php');
 
 $metai = $_POST['metai'];
 $menuo = $_POST['menuo'];
