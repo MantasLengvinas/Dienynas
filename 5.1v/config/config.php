@@ -6,10 +6,10 @@ define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'tamo');
-define('version', 'v5.1.151');
-define('sy', '2018-2019');
+define('version', 'v5.1.1512');
+define('sy', '2019-2020');
 define('period_desc', array(
-    '2018-09-03 - 2019-01-25',
+    '2019-09-03 - 2019-01-25',
     '2019-01-26 - 2019-06-21'
 ));
 define('period_data', array(
