@@ -313,6 +313,11 @@ let monthInfo = [
 
 let dateSelectors = [];
 
+function toTimestamp(strDate){
+    var datum = Date.parse(strDate);
+    return datum/1000;
+}
+
 let loadTable = (id) => {
     startLoading();
     $('.date_selector div').removeClass('date_active');
@@ -355,9 +360,14 @@ let dateSelector = () => {
     var date = new Date();
     let metai = date.getFullYear();
     let menuo = date.getMonth() + 1;
+    let day = date.getDate();
 
     $('.date_selector div').children('a').each(function () {
-        if ($(this).data('menuo') <= menuo || $(this).data('metai') < metai) {
+        let dsts = toTimestamp(`${$(this).data('metai')} ${$(this).data('menuo')} 1 0:0:0`);
+        let cts = toTimestamp(`${metai} ${menuo} ${day} 0:0:0`);
+        
+        console.log(date.getDate());
+        if (dsts <= cts) {
             $(this).parent().removeClass('hidden');
         }
     });
