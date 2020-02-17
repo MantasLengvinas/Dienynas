@@ -24,7 +24,7 @@ function Notify(title, data, type) {
     $('#response_window').fadeToggle("slow", () => {
         setTimeout(() => {
             $('#response_window').fadeToggle("slow");
-        }, 3500);
+        }, 4500);
     });    
 }
 
