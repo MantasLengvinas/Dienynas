@@ -5,31 +5,31 @@
 
 <!-- Body section -->
 
-        <div id="c_main">
-            
-            <div class="page_header">
-                <h3 id="admin_page_header"></h3>
-                <div class="header_description" id="header_description">
-                    
-                </div>
-            </div>        
-            
-            <div class="page_content">
-                
-                <div class="row">
-                    <div class="col-md-14 d-flex" style="position:relative;" id="admin_content">
 
-                    </div>
-                </div>
+<div id="c_main">
+
+    <div class="page_header">
+        <h3 id="admin_page_header"></h3>
+        <div class="header_description" id="header_description">
+
+        </div>
+    </div>
+
+    <div class="page_content">
+
+        <div class="row">
+            <div class="col-md-14 d-flex" style="position:relative;" id="admin_content">
+
             </div>
         </div>
-        
-        <!-- Loading scripts -->
-        <script>
-            $(document).ready(function(){
-                users();
-            })
-        </script>
+    </div>
+</div>
+
+<!-- Loading scripts -->
+<script>
+    $(document).ready(function () {
+        users();
+    })
+</script>
 
 <?php include_once 'inc/footer.php';?>
-

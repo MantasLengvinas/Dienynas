@@ -93,9 +93,12 @@ class Mark{
         $this->db->bind("mark", $mark);
         $this->db->bind("type", $type);
         $this->db->bind("period", $period);
-        $this->db->execute();
 
-        return 'Pažymys sėkmingai įrašytas!';
+        if($this->db->execute()){
+            return true;
+        }
+
+        return false;
     }
 
     public function searchMark($year, $month, $day, $subject){

@@ -83,27 +83,58 @@
 
  -->
 
-                    <li data-name="pagrindinis.admin">
+                    <li data-name="students.admin">
                         <div style="position:relative" class="s_menu_title icon_news">
                             <span class="menu_icon" style="background: url('../static/images/news.png')"></span>
 
-                            <span><a href="javascript:void(0);">Pagrindinis</a></span>
+                            <span><a href="javascript:void(0);">Ugdymas</a></span>
+                        </div>
+                        <ol id="selects">
+                            <li style="position:relative" class="">
+                                <a href="javascript:void(0);" onclick="marks();">Vertinimas</a>
+                            </li>
+
+                            <li style="position:relative" class="">
+                                <a href="javascript:void(0);" onclick="subjects();">Mokomieji dalykai</a>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li data-name="users.admin">
+                        <div style="position:relative" class="s_menu_title icon_news">
+                            <i class="fa fa-user menu_icon" style="font-size:22px;color:white; display: inline-block;vertical-align: middle;margin: -2px 10px 0 10px;"></i>
+
+                            <span><a href="javascript:void(0);">Vartotojai</a></span>
                         </div>
                         <ol id="selects">
                             <li style="position:relative" class="">
                                 <a href="javascript:void(0);" onclick="users();">Vartotojai</a>
                             </li>
-
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="marks();">Pažymiai</a>
-                            </li>
-
-                            <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="subjects();">Dalykai</a>
+                            <a href="javascript:void(0);" onclick="sessions();">Prisijungimai</a>
                             </li>
                         </ol>
+                    </li>
 
 
+                    <li data-name="data.admin">
+                        <div style="position:relative" class="s_menu_title icon_info">
+                        <i class="fa fa-folder menu_icon" style="font-size:22px;color:white; display: inline-block;vertical-align: middle;margin: -2px 10px 0 10px;"></i>
+
+                            <span>Duomenys</span>
+                        </div>
+                        <ol id="selects">
+
+                            <li style="position:relative" class="">
+                                <a href="javascript:void(0);" onclick="databases();">Duomenų bazės</a>
+                            </li>
+
+                            <li style="position:relative" class="">
+                                <a href="javascript:void(0);" onclick="logs();">Žurnalas</a>
+                            </li>
+
+
+                        </ol>
                     </li>
 
                     <li data-name="more.admin">
@@ -113,17 +144,8 @@
                             <span>Kita</span>
                         </div>
                         <ol id="selects">
-
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="sessions();">Prisijungimai</a>
-                            </li>
-
-                            <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="logs();">Žurnalas</a>
-                            </li>
-
-                            <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="siteInfo();">Informacija</a>
+                                <a href="javascript:void(0);" onclick="siteInfo();">Puslapio informacija</a>
                             </li>
 
                         </ol>

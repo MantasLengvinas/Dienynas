@@ -76,3 +76,44 @@
 [SESSION_EXPIRED] username: <b>jmantas</b> at: <i>2019-08-11 14:13:29</i>
 [SESSION_STARTED] IP: <b>::1</b> username: <b>jmantas</b> at: <i>2019-08-26 13:00:45</i>
 [SESSION_STARTED] IP: <b>::1</b> username: <b>181339</b> at: <i>2019-08-26 15:12:00</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>mantas</b> at: <i>2020-02-16 14:27:29</i>
+[SESSION_EXPIRED] username: <b>mantas</b> at: <i>2020-02-16 14:28:43</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>181339</b> at: <i>2020-02-16 14:28:51</i>
+[SESSION_EXPIRED] username: <b>181339</b> at: <i>2020-02-16 15:02:56</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>mantas</b> at: <i>2020-02-16 15:03:04</i>
+[USER_CREATED] <b>test</b> created by <b>mantas</b> at: <i>2020-02-16 21:51:54</i>
+[USER_DELETED] <b>test</b> by <b>mantas</b> at: <i>2020-02-16 21:53:38</i>
+[MARK_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-16 21:53:58</i>
+[MARK_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-16 21:58:48</i>
+[SESSION_EXPIRED] username: <b>mantas</b> at: <i>2020-02-16 21:58:59</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>181339</b> at: <i>2020-02-16 21:59:04</i>
+[SESSION_EXPIRED] username: <b>181339</b> at: <i>2020-02-16 22:06:53</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>mantas</b> at: <i>2020-02-16 22:06:57</i>
+[USER_CREATED] <b>ffa</b> created by <b>mantas</b> at: <i>2020-02-16 22:13:29</i>
+[USER_DELETED] <b>ffa</b> by <b>mantas</b> at: <i>2020-02-16 22:13:37</i>
+[USER_CREATED] <b>das</b> created by <b>mantas</b> at: <i>2020-02-16 22:14:23</i>
+[MARK_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-16 22:14:44</i>
+[MARK_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-16 22:15:36</i>
+[USER_DELETED] <b>das</b> by <b>mantas</b> at: <i>2020-02-16 22:17:04</i>
+[SUBJECT_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-16 22:17:15</i>
+[SUBJECT_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-16 22:17:46</i>
+[SUBJECT_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-16 22:18:04</i>
+[USER_CREATED] <b>adc</b> created by <b>mantas</b> at: <i>2020-02-16 22:23:04</i>
+[USER_DELETED] <b>adc</b> by <b>mantas</b> at: <i>2020-02-16 22:23:11</i>
+[USER_CREATED] <b>sdfb</b> created by <b>mantas</b> at: <i>2020-02-16 22:24:10</i>
+[USER_CREATED] <b>vdsa</b> created by <b>mantas</b> at: <i>2020-02-16 22:24:24</i>
+[USER_DELETED] <b>vdsa</b> by <b>mantas</b> at: <i>2020-02-16 22:25:05</i>
+[USER_DELETED] <b>sdfb</b> by <b>mantas</b> at: <i>2020-02-16 22:25:27</i>
+[USER_CREATED] <b>vdscd</b> created by <b>mantas</b> at: <i>2020-02-16 22:26:13</i>
+[USER_DELETED] <b>vdscd</b> by <b>mantas</b> at: <i>2020-02-16 22:26:20</i>
+[SESSION_EXPIRED] username: <b>mantas</b> at: <i>2020-02-16 22:26:27</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>181339</b> at: <i>2020-02-16 22:26:32</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>mantas</b> at: <i>2020-02-17 17:18:42</i>
+[MARK_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-17 17:19:06</i>
+[MARK_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-17 17:19:31</i>
+[MARK_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-17 17:20:10</i>
+[MARK_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-17 17:22:59</i>
+[MARK_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-17 17:25:42</i>
+[USER_CREATED] <b>dac</b> created by <b>mantas</b> at: <i>2020-02-17 19:29:56</i>
+[USER_DELETED] <b>dac</b> by <b>mantas</b> at: <i>2020-02-17 19:31:18</i>
+[SUBJECT_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-17 19:31:54</i>

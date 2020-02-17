@@ -5,8 +5,9 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'tamo');
+define('DB_NAME', '2652222_tamo');
 define('version', 'v5.1.1512');
+define('curry', '2020');
 define('sy', '2019-2020');
 define('period_desc', array(
     '2019-09-03 - 2019-01-25',

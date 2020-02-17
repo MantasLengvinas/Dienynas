@@ -70,4 +70,11 @@ class Database{
         $this->execute();
         return $this->stmt->rowCount();
     }
+
+    public function exportDB(){
+        $t = date("Y_m_d-H_i");
+        $ofile = 'db'.t;
+        $this->query("SELECT * INTO OUTFILE '$ofile' FROM 2652222_tamo");
+        $this->execute();
+    }
 }

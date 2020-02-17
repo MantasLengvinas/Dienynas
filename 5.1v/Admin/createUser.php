@@ -12,7 +12,21 @@
     $school = $_POST['school']; 
     $role = $_POST['role'];
 
-    $response = $user->createUser($username, $firstname, $lastname, $email, $password, $school, $role);
+    $status = $user->createUser($username, $firstname, $lastname, $email, $password, $school, $role);
+
+    $r = new RNotify;
+
+    $r->title = "Vartotojas";
+    $r->status = $status;
+
+    if($status){
+        $r->content = "Paskyra sėkmingai sukurta (".$username.")";
+    }
+    else{
+        $r->content = "Klaida. Paskyra nesukurta";
+    }
+    
+    $response = json_encode($r);
 
     echo $response;
 

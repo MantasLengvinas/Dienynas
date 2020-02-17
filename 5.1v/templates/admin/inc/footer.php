@@ -51,7 +51,7 @@
     <div class="col-md-14">
         <div style="background-color:white;height:30px;">
             <div id="footer">
-    <p>© 2019 JML. Visos teisės saugomos. <?=$version?></p>
+    <p>© 2020 JML. Visos teisės saugomos. <?=$version?></p>
 </div>
         </div>
     </div>
@@ -65,3 +65,4 @@
 <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
 <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.sound.js"></script>
 <script src="../static/scripts/timer.js"></script>
+<script src="../static/scripts/notifications.js"></script>

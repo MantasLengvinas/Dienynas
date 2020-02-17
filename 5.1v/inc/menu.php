@@ -25,7 +25,7 @@
                         <div style="position:relative" class="s_menu_title icon_news">
                             <span class="menu_icon" style="background: url('../static/images/news.png')"></span>
 
-                            <span><a href="javascript:void(0);">Naujienos</a></span>
+                            <span><a href="../Klaida/Klaida">Naujienos</a></span>
                         </div>
                     </li>
 
@@ -33,19 +33,19 @@
                         <div style="position:relative" class="s_menu_title icon_news">
                             <i class="fa fa-cogs fa-2x fa-fw" aria-hidden="true" style="font-size:21px;color:white; display: inline-block;vertical-align: middle;margin: -2px 10px 0 10px;"></i>
 
-                            <span><a href="javascript:void(0);">Pagrindinis</a></span>
+                            <span><a href="../Klaida/Klaida">Pagrindinis</a></span>
                         </div>
                         <ol id="selects">
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="users();">Vartotojai</a>
+                                <a href="../Klaida/Klaida" onclick="users();">Vartotojai</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="marks();">Pažymiai</a>
+                                <a href="../Klaida/Klaida" onclick="marks();">Pažymiai</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="subjects();">Dalykai</a>
+                                <a href="../Klaida/Klaida" onclick="subjects();">Dalykai</a>
                             </li>
                         </ol>
 
@@ -61,21 +61,21 @@
                         <ol id="selects">
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="sessions();">Prisijungimai</a>
+                                <a href="../Klaida/Klaida" onclick="sessions();">Prisijungimai</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="logs();">Žurnalas</a>
+                                <a href="../Klaida/Klaida" onclick="logs();">Žurnalas</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="siteInfo();">Informacija</a>
+                                <a href="../Klaida/Klaida" onclick="siteInfo();">Informacija</a>
                             </li>
 
                         </ol>
                     </li>
 
-                    <a href="javascript:void(0);">
+                    <a href="../Klaida/Klaida">
                         <li data-name="kalba.lt.mok">
                             <div class="s_menu_title" style="background-color:#5e4534;">
                                 <span class="menu_icon" style="background:none; margin:-2px 10px 0 10px;"><img
@@ -100,7 +100,7 @@
 
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Apžvalga</a>
+                                <a href="../Klaida/Klaida">Apžvalga</a>
                             </li>
 
 
@@ -108,7 +108,7 @@
 
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Pagal dalykus</a>
+                                <a href="../Klaida/Klaida">Pagal dalykus</a>
                             </li>
 
 
@@ -129,7 +129,7 @@
 
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Paslaugų valdymas</a>
+                                <a href="../Klaida/Klaida">Paslaugų valdymas</a>
                             </li>
 
 
@@ -150,7 +150,7 @@
 
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Tvarkaraštis</a>
+                                <a href="../Klaida/Klaida">Tvarkaraštis</a>
                             </li>
 
                             <li style="position:relative" class="">
@@ -158,31 +158,31 @@
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Pamokos</a>
+                                <a href="../Klaida/Klaida">Pamokos</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Namų darbai</a>
+                                <a href="../Klaida/Klaida">Namų darbai</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Atsiskaitomieji darbai</a>
+                                <a href="../Klaida/Klaida">Atsiskaitomieji darbai</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Pagyrimai/ Pastabos</a>
+                                <a href="../Klaida/Klaida">Pagyrimai/ Pastabos</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="../PeriodoVertinimas/MokinioVertinimai">Trimestrai / Pusmečiai</a>
+                                <a href="../Klaida/Klaida">Trimestrai / Pusmečiai</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Vidurkių skaičiavimas</a>
+                                <a href="../Klaida/Klaida">Vidurkių skaičiavimas</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Mano knygos</a>
+                                <a href="../Klaida/Klaida">Mano knygos</a>
                             </li>
 
                         </ol>
@@ -219,27 +219,27 @@
 
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Dokumentų saugykla</a>
+                                <a href="../Klaida/Klaida">Dokumentų saugykla</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Nauji ugdymo planai</a>
+                                <a href="../Klaida/Klaida">Nauji ugdymo planai</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Ugdymo planas</a>
+                                <a href="../Klaida/Klaida">Ugdymo planas</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);"></a>
+                                <a href="../Klaida/Klaida"></a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);"></a>
+                                <a href="../Klaida/Klaida"></a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);"></a>
+                                <a href="../Klaida/Klaida"></a>
                             </li>
                         </ol>
                     </li>
@@ -254,27 +254,27 @@
 
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Pranešimai (0)</a>
+                                <a href="../Klaida/Klaida">Pranešimai (0)</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Apklausos (0)</a>
+                                <a href="../Klaida/Klaida">Apklausos (0)</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Forumai</a>
+                                <a href="../Klaida/Klaida">Forumai</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Asmeniniai duomenys</a>
+                                <a href="../Klaida/Klaida">Asmeniniai duomenys</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Klasių gimtadieniai</a>
+                                <a href="../Klaida/Klaida">Klasių gimtadieniai</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);">Atostogų datos</a>
+                                <a href="../Klaida/Klaida">Atostogų datos</a>
                             </li>
                         </ol>
                     </li>

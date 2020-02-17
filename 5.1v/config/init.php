@@ -11,3 +11,9 @@ if (strpos($_SERVER['REQUEST_URI'], "Admin") && $_SESSION['role'] != 'Administra
 function __autoload($class_name){
     require_once '../lib/'.$class_name.'.php';
 }
+
+class RNotify {
+    public $title;
+    public $content;
+    public $status;
+}

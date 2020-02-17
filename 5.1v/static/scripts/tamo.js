@@ -5,12 +5,6 @@ function showModal() {
     modal.classList.toggle('show');
 }
 
-function reload() {
-    setTimeout(function () {
-        location.reload();
-    }, 3000);
-}
-
 function startLoading() {
     document.getElementById('loader').classList.remove('hidden');
     $('html').css('opacity', '0.6');
@@ -19,6 +13,19 @@ function startLoading() {
 function stopLoading() {
     document.getElementById('loader').classList.add('hidden');
     $('html').css('opacity', '1');
+}
+
+function Notify(title, data, type) {
+    $('#response_title').html(title);
+    if(!type){
+        $('#response_window').attr("class", "brighttheme ui-pnotify-container brighttheme-error ui-pnotify-shadow");
+    }
+    $("#response_content").html(data);
+    $('#response_window').fadeToggle("slow", () => {
+        setTimeout(() => {
+            $('#response_window').fadeToggle("slow");
+        }, 3500);
+    });    
 }
 
 //Admin requests
@@ -118,6 +125,58 @@ let moreInfo = id => {
         })
 }
 
+let databases = () => {
+    startLoading();
+    $("#admin_page_header").html('Duomenų bazės');
+    $.ajax({
+            type: 'GET',
+            url: '../Admin/Databases.php',
+        })
+        .done(function (data) {
+            $('#admin_content').html(data);
+            showSQL();
+            stopLoading();
+        });
+}
+
+let showSQL = () => {
+
+    startLoading();
+    let db = $('#database').val();
+
+    let data = {database: db};
+    $.ajax({
+        type: 'POST',
+        data: data,
+        url: '../Admin/showSQL.php'
+    })
+    .done(function(data) {
+        $("#sql_view").html(data);
+        stopLoading();
+    })
+}
+
+let downloadSQL = () => {
+    startLoading();
+    let db = $('#database').val();
+
+    let data = {database: db};
+    $.ajax({
+        type: 'POST',
+        data: data,
+        url: '../Admin/downloadSQL.php'
+    })
+    .done(function(data) {
+        data = JSON.parse(data);
+        stopLoading();
+        Notify(data.title, data.content, data.status);
+    })
+}
+
+let exportDB = () => {
+    
+}
+
 let createUser = () => {
     let username = $("#username").val();
     let firstname = $("#firstname").val();
@@ -148,8 +207,10 @@ let createUser = () => {
         url: '../Admin/createUser.php'
     })
     .done(function(data) {
-        $("#user-response").html(data);
-        reload();
+        users();
+        data = JSON.parse(data);
+        stopLoading();
+        Notify(data.title, data.content, data.status);
     })
 }
 
@@ -166,9 +227,10 @@ let deleteUser = (id) => {
             url: '../Admin/deleteUser.php'
         })
         .done(function(data) {
-            $("#user-response").html(data);
+            users();
+            data = JSON.parse(data);
+            Notify(data.title, data.content, data.status);
             showModal();
-            reload();
         })
     }
 }
@@ -233,8 +295,9 @@ let uploadMark = () => {
             data: data
         })
         .done(function (data) {
-            $("#modal-response").html(data);
+            data = JSON.parse(data);
             stopLoading();
+            Notify(data.title, data.content, data.status);
         })
 }
 
@@ -257,8 +320,9 @@ let uploadSubject = () => {
             url: '../Admin/uploadSubject.php'
         })
         .done(function (data) {
-            $("#uploadsubject-response").html(data);
+            data = JSON.parse(data);
             stopLoading();
+            Notify(data.title, data.content, data.status);
         })
 }
 

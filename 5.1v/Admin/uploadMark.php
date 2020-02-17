@@ -3,6 +3,7 @@
 <?php 
 
     $m = new Mark;
+    $s = new Subject;
 
     $username = $_POST['student'];
     $subject = $_POST['subject'];
@@ -12,7 +13,23 @@
     $mark = $_POST['mark']; 
     $type = $_POST['type'];
 
-    $response = $m->uploadMark($username, $subject, $year, $month, $day, $mark, $type);
+    $status = $m->uploadMark($username, $subject, $year, $month, $day, $mark, $type);
+
+    $r = new RNotify;
+
+    $r->title = "Pažymys";
+    $r->status = $status;
+
+    $um = "";
+
+    if($status){
+        $r->content = "Pažymys sėkmingai įrašytas";
+    }
+    else{
+        $r->content = "Klaida. Pažymys neįrašytas";
+    }
+    
+    $response = json_encode($r);
 
     echo $response;
 

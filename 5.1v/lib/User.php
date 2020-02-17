@@ -167,6 +167,12 @@ class User{
     }
 
     public function createUser($username, $firstname, $lastname, $email, $password, $school, $role){
+
+        $log = "../log.txt";
+        $actionTime = date('Y-m-d H:i:s');
+        $logMsg = "[USER_CREATED] <b>".$username."</b> created by <b>".$_SESSION['username']."</b> at: <i>".$actionTime."</i>\n";      
+        file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
+
         try{
             $this->db->query("INSERT INTO users (firstname, lastname, username, email, password, school, role) VALUES (:firstname, :lastname, :username, :email, :password, :school, :role)");
             $hashed_password = md5($password);
@@ -179,32 +185,31 @@ class User{
             $this->db->bind("school", $school);
             $this->db->bind("role", $role);
 
-            $this->db->execute();
+            if($this->db->execute()){
+                return true;
+            }
 
-            $log = "../log.txt";
-            $actionTime = date('Y-m-d H:i:s');
-            $logMsg = "[USER_CREATED] <b>".$username."</b> created by <b>".$_SESSION['username']."</b> at: <i>".$actionTime."</i>\n";      
-            file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
-
-            return 'Vartotojas sėkmingai sukurtas!';
         }
         catch(PDOException $e){
-            return $e;
+            return false;
         }
     }
 
     public function deleteUser($username){
-        $this->db->query("DELETE FROM users WHERE username = :username");
-        $this->db->bind('username', $username);
-        $this->db->execute();
-        $this->m->deleteMarks($username);
-        $this->s->deleteSubjects($username);
 
         $log = "../log.txt";
         $actionTime = date('Y-m-d H:i:s');
         $logMsg = "[USER_DELETED] <b>".$username."</b> by <b>".$_SESSION['username']."</b> at: <i>".$actionTime."</i>\n";      
         file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
 
-        return 'Vartotojas sėkmingai ištrintas';
+        $this->db->query("DELETE FROM users WHERE username = :username");
+        $this->db->bind('username', $username);
+        if($this->db->execute()){
+            $this->m->deleteMarks($username);
+            $this->s->deleteSubjects($username);
+            return true;
+        }
+
+        return false;
     }
 }

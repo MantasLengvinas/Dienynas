@@ -35,18 +35,21 @@ class Subject{
     }
 
     public function uploadSubject($username, $subject, $teacher){
-        $this->db->query("INSERT INTO subjects (student_username, subject, teacher) VALUES (:username, :subject, :teacher)");
-        $this->db->bind('username', $username);
-        $this->db->bind('subject', $subject);
-        $this->db->bind('teacher', $teacher);
-        $this->db->execute();
-
         $log = "../log.txt";
         $actionTime = date('Y-m-d H:i:s');
         $logMsg = "[SUBJECT_ADDED] for <b>".$username."</b> by <b>".$_SESSION['username']."</b> at: <i>".$actionTime."</i>\n";      
         file_put_contents($log, $logMsg, FILE_APPEND | LOCK_EX);
 
-        return 'Mokomasis dalykas sėkmingai įrašytas';
+        $this->db->query("INSERT INTO subjects (student_username, subject, teacher) VALUES (:username, :subject, :teacher)");
+        $this->db->bind('username', $username);
+        $this->db->bind('subject', $subject);
+        $this->db->bind('teacher', $teacher);
+
+        if($this->db->execute()){
+            return true;
+        }
+
+        return false;
     }
 
     public function deleteSubjects($username){

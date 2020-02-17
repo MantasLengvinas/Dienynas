@@ -4,7 +4,21 @@
     $id = $_POST['id'];
     $user = new User();
 
-    $response = $user->deleteUser($id);
+    $status = $user->deleteUser($id);
+
+    $r = new RNotify;
+
+    $r->title = "Vartotojas";
+    $r->status = $status;
+
+    if($status){
+        $r->content = "Paskyra sėkmingai pašalinta";
+    }
+    else{
+        $r->content = "Klaida. Paskyra nepašalinta";
+    }
+    
+    $response = json_encode($r);
 
     echo $response;
 ?>
