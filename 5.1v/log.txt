@@ -117,3 +117,5 @@
 [USER_CREATED] <b>dac</b> created by <b>mantas</b> at: <i>2020-02-17 19:29:56</i>
 [USER_DELETED] <b>dac</b> by <b>mantas</b> at: <i>2020-02-17 19:31:18</i>
 [SUBJECT_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-17 19:31:54</i>
+[SESSION_EXPIRED] username: <b>mantas</b> at: <i>2020-02-17 20:20:42</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>181339</b> at: <i>2020-02-17 20:20:47</i>

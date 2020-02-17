@@ -15,7 +15,7 @@
 <blockquote>
     <pre style="max-height: 500px; overflow-y: auto;">
         <code >
-            <?=$sql?>
+            <?=$xml?>
         </code>
     </pre>
 </blockquote>

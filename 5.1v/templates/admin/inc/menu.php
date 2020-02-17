@@ -126,7 +126,7 @@
                         <ol id="selects">
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="databases();">Duomenų bazės</a>
+                                <a href="../Klaida/Klaida" onclick="">Duomenų bazės</a>
                             </li>
 
                             <li style="position:relative" class="">

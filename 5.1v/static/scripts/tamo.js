@@ -45,7 +45,7 @@ let users = () => {
 
 let marks = () => {
     startLoading();
-    $("#admin_page_header").html('Pažymiai');
+    $("#admin_page_header").html('Vertinimas');
     $.ajax({
             type: 'GET',
             url: '../Admin/Marks.php',
@@ -58,7 +58,7 @@ let marks = () => {
 
 let subjects = () => {
     startLoading();
-    $("#admin_page_header").html('Dalykai');
+    $("#admin_page_header").html('Mokomieji dalykai');
     $.ajax({
             type: 'GET',
             url: '../Admin/Subjects.php',
@@ -134,12 +134,12 @@ let databases = () => {
         })
         .done(function (data) {
             $('#admin_content').html(data);
-            showSQL();
+            showXML();
             stopLoading();
         });
 }
 
-let showSQL = () => {
+let showXML = () => {
 
     startLoading();
     let db = $('#database').val();
@@ -148,7 +148,7 @@ let showSQL = () => {
     $.ajax({
         type: 'POST',
         data: data,
-        url: '../Admin/showSQL.php'
+        url: '../Admin/showXML.php'
     })
     .done(function(data) {
         $("#sql_view").html(data);
