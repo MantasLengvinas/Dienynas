@@ -119,3 +119,21 @@
 [SUBJECT_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-02-17 19:31:54</i>
 [SESSION_EXPIRED] username: <b>mantas</b> at: <i>2020-02-17 20:20:42</i>
 [SESSION_STARTED] IP: <b>::1</b> username: <b>181339</b> at: <i>2020-02-17 20:20:47</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>mantas</b> at: <i>2020-02-18 19:21:35</i>
+[USER_CREATED] <b>test</b> created by <b>mantas</b> at: <i>2020-02-18 20:27:02</i>
+[SUBJECT_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:27:24</i>
+[SUBJECT_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:27:39</i>
+[SUBJECT_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:27:59</i>
+[MARK_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:28:22</i>
+[MARK_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:30:23</i>
+[MARK_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:31:58</i>
+[MARK_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:32:24</i>
+[MARK_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:33:07</i>
+[MARK_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:37:30</i>
+[MARK_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:43:17</i>
+[MARK_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:44:45</i>
+[MARK_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:44:55</i>
+[MARK_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:46:10</i>
+[MARK_ADDED] for <b>test</b> by <b>mantas</b> at: <i>2020-02-18 20:47:28</i>
+[SESSION_EXPIRED] username: <b>mantas</b> at: <i>2020-02-18 20:47:40</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>test</b> at: <i>2020-02-18 20:47:50</i>

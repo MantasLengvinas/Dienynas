@@ -20,8 +20,6 @@
     $r->title = "Pažymys";
     $r->status = $status;
 
-    $um = "";
-
     if($status){
         $r->content = "Pažymys sėkmingai įrašytas";
     }

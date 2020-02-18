@@ -28,7 +28,7 @@
 <!-- Loading scripts -->
 <script>
     $(document).ready(function () {
-        users();
+        marks();
     })
 </script>
 

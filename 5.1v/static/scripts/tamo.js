@@ -268,6 +268,21 @@ let prepareMark = () => {
 
 }
 
+let showMarks = () => {
+    let username = $("#student").val();
+
+    $.ajax({
+        type: 'GET',
+        data: {
+            username: username
+        },
+        url: '../Admin/showMarks.php'
+    })
+    .done(function (data) {
+        $("#showmarks-response").html(data);
+    })
+}
+
 let uploadMark = () => {
 
     startLoading();
@@ -301,6 +316,33 @@ let uploadMark = () => {
         })
 }
 
+let deleteMark = id => {
+    startLoading();
+    let username = $("#student").val();
+
+    var con = confirm("Vartotojas bus ištrintas");
+
+    if(con){
+        $.ajax({
+            type: 'POST',
+            data: {
+                username: username,
+                id: id
+            },
+            url: '../Admin/deleteMark.php'
+        })
+        .done(function (data) {
+            data = JSON.parse(data);
+            stopLoading();
+            Notify(data.title, data.content, data.status);
+            showMarks();
+        })
+    }
+    else{
+        stopLoading();
+    }
+}
+
 let uploadSubject = () => {
 
     startLoading();
@@ -323,12 +365,13 @@ let uploadSubject = () => {
             data = JSON.parse(data);
             stopLoading();
             Notify(data.title, data.content, data.status);
+            showMarks();
         })
 }
 
 let loadMarksContent = () => {
     prepareMark();
-    //periodData();
+    showMarks();
 }
 
 let periodData = () => {

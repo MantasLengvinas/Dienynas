@@ -67,6 +67,21 @@ class Mark{
         $actionTime = date('Y-m-d h:i:sa');
     }
 
+    public function deleteOneMark($username, $id){
+        $log = "../log.txt";
+        $actionTime = date('Y-m-d h:i:sa');
+
+        $this->db->query("DELETE FROM marks WHERE student_username = :username AND id = :id");
+        $this->db->bind('username', $username);
+        $this->db->bind('id', $id);
+
+        if($this->db->execute()){
+            return true;
+        }
+
+        return false;
+    }
+
     public function uploadMark($username, $subj, $year, $month, $day, $mark, $type){
 
         $log = "../log.txt";
