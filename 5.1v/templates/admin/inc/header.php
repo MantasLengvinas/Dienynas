@@ -95,7 +95,7 @@
                 <div class="col-md-10">
 
                     <span
-                        style="vertical-align:middle;display:table-cell;height:40px;font-size:16px;font-weight:600;padding-left:15px;"><?= $school ?></span>
+                        style="vertical-align:middle;display:table-cell;height:40px;font-size:16px;font-weight:600;padding-left:15px;"><?= $_SESSION['school'] ?></span>
                     <div style="vertical-align:middle;display:table-cell;height:40px;padding:0 5px 0 5px;">
 
                         <div class="academic_year_section">
@@ -136,11 +136,11 @@
                                     <a href="javascript:void(0);"><img style="vertical-align:middle;"
                                             src="../static/images/head.png"></a>
                                     <div style="display:inline-block;vertical-align:middle;">
-                                        <div style="font-size:14px;font-weight:600;"><?= $firstname.' '.$lastname ?>
+                                        <div style="font-size:14px;font-weight:600;"><?= $_SESSION['firstname'].' '.$_SESSION['lastname'] ?>
                                         </div>
                                         <div class="c_select_box auto_hide_button inactive">
                                             <a class="c_select_box_link" onclick="Dropdown();">
-                                                <?= $role?>
+                                                <?= $_SESSION['role'] ?>
                                                 <!--<div class="drop_icon"></div>-->
                                                 <i id="arrowContainer" class="fa fa-caret-down drop_down_icon fa-lg"
                                                     aria-hidden="true" style="color:#86b3cb"></i>
@@ -154,10 +154,10 @@
                                                             <i class="fa fa-check fa-2x fa-fw" aria-hidden="true"></i>
                                                             <span class="role_title">
 
-                                                                <?= $role?> <span class="role_name">
+                                                                <?= $_SESSION['role'] ?> <span class="role_name">
 
                                                                 </span>
-                                                                <span class="role_details"><?= $school ?></span>
+                                                                <span class="role_details"><?= $_SESSION['school'] ?></span>
                                                             </span>
                                                         </div>
                                                     </a>

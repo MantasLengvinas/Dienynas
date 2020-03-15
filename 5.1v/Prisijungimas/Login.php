@@ -6,11 +6,11 @@
 
 if(isset($_SESSION['logged_in'])){
     if($_SESSION['role'] == 'Mokinys'){
-        $url = 'Naujienos';
+        $url = 'Naujienos?logged_in=true';
         header("Location: $url");
     }
     else if($_SESSION['role'] == 'Administratorius'){
-        $url = '../Admin/Home';
+        $url = '../Education/Marks?logged_in=true';
         header("Location: $url");
     }
 }
@@ -30,7 +30,7 @@ else{
             $uid = $user->Login($username, $password);
             if($uid){
                 if($_SESSION['role'] == 'Administratorius'){
-                    $url = '../Admin/Home?clickMode=true';
+                    $url = '../Education/Marks?clickMode=true';
                     header("Location: $url");
                 }
                 else{

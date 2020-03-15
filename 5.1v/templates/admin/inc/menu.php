@@ -91,11 +91,15 @@
                         </div>
                         <ol id="selects">
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="marks();">Vertinimas</a>
+                                <a href="../Education/Marks">Vertinimas</a>
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="subjects();">Mokomieji dalykai</a>
+                                <a href="../Education/Subjects">Mokomieji dalykai</a>
+                            </li>
+
+                            <li style="position:relative" class="">
+                                <a href="../Education/Advancement">Apžvalga</a>
                             </li>
                         </ol>
                     </li>

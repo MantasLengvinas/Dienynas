@@ -1,5 +1,7 @@
 </div>
 </div>
+</div>
+</div>
 <script>
                 let arrowContainer = document.getElementById("arrowContainer");
                 let isarrowDown = true;
@@ -65,4 +67,3 @@
 <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
 <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.sound.js"></script>
 <script src="../static/scripts/timer.js"></script>
-<script src="../static/scripts/notifications.js"></script>

@@ -35,7 +35,7 @@ let users = () => {
     $("#admin_page_header").html('Vartotojai');
     $.ajax({
         type: 'GET',
-        url: '../Admin/Users.php',
+        url: '../Requests/Users.php',
     })
     .done(function (data) {
         $('#admin_content').html(data);
@@ -43,25 +43,12 @@ let users = () => {
     });
 }
 
-let marks = () => {
-    startLoading();
-    $("#admin_page_header").html('Vertinimas');
-    $.ajax({
-            type: 'GET',
-            url: '../Admin/Marks.php',
-        })
-        .done(function (data) {
-            $('#admin_content').html(data);
-            stopLoading();
-        });
-}
-
 let subjects = () => {
     startLoading();
     $("#admin_page_header").html('Mokomieji dalykai');
     $.ajax({
             type: 'GET',
-            url: '../Admin/Subjects.php',
+            url: '../Requests/Subjects.php',
         })
         .done(function (data) {
             $('#admin_content').html(data);
@@ -74,7 +61,7 @@ let sessions = () => {
     $("#admin_page_header").html('Prisijungimai');
     $.ajax({
             type: 'GET',
-            url: '../Admin/Sessions.php',
+            url: '../Requests/Sessions.php',
         })
         .done(function (data) {
             $('#admin_content').html(data);
@@ -87,7 +74,7 @@ let logs = () => {
     $("#admin_page_header").html('Žurnalas');
     $.ajax({
             type: 'GET',
-            url: '../Admin/Logs.php',
+            url: '../Requests/Logs.php',
         })
         .done(function (data) {
             $('#admin_content').html(data);
@@ -100,7 +87,7 @@ let siteInfo = () => {
     $("#admin_page_header").html('Informacija');
     $.ajax({
             type: 'GET',
-            url: '../Admin/siteInfo.php',
+            url: '../Requests/siteInfo.php',
         })
         .done(function (data) {
             $('#admin_content').html(data);
@@ -114,7 +101,7 @@ let moreInfo = id => {
             data: {
                 id: id
             },
-            url: '../Admin/userInfo.php'
+            url: '../Requests/userInfo.php'
         })
         .done(function (data) {
             $('#moreInfo-response').html(data);
@@ -130,7 +117,7 @@ let databases = () => {
     $("#admin_page_header").html('Duomenų bazės');
     $.ajax({
             type: 'GET',
-            url: '../Admin/Databases.php',
+            url: '../Requests/Databases.php',
         })
         .done(function (data) {
             $('#admin_content').html(data);
@@ -148,7 +135,7 @@ let showXML = () => {
     $.ajax({
         type: 'POST',
         data: data,
-        url: '../Admin/showXML.php'
+        url: '../Requests/showXML.php'
     })
     .done(function(data) {
         $("#sql_view").html(data);
@@ -164,7 +151,7 @@ let downloadSQL = () => {
     $.ajax({
         type: 'POST',
         data: data,
-        url: '../Admin/downloadSQL.php'
+        url: '../Requests/downloadSQL.php'
     })
     .done(function(data) {
         data = JSON.parse(data);
@@ -204,7 +191,7 @@ let createUser = () => {
     $.ajax({
         type: 'POST',
         data: data,
-        url: '../Admin/createUser.php'
+        url: '../Requests/createUser.php'
     })
     .done(function(data) {
         users();
@@ -224,7 +211,7 @@ let deleteUser = (id) => {
             data: {
                 id: id
             },
-            url: '../Admin/deleteUser.php'
+            url: '../Requests/deleteUser.php'
         })
         .done(function(data) {
             users();
@@ -239,7 +226,7 @@ let searchUser = (value) => {
     startLoading();
     $.ajax({
         type: 'GET',
-        url: '../Admin/Users.php',
+        url: '../Requests/Users.php',
         data: {value: value}
     })
     .done(function (data) {
@@ -259,7 +246,7 @@ let prepareMark = () => {
                 username: username,
                 monthInfo: monthInfo
             },
-            url: '../Admin/prepareMark.php'
+            url: '../Requests/prepareMark.php'
         })
         .done(function (data) {
             $("#prepareMark-response").html(data);
@@ -276,7 +263,7 @@ let showMarks = () => {
         data: {
             username: username
         },
-        url: '../Admin/showMarks.php'
+        url: '../Requests/showMarks.php'
     })
     .done(function (data) {
         $("#showmarks-response").html(data);
@@ -306,11 +293,12 @@ let uploadMark = () => {
     };
 
     $.post({
-            url: '../Admin/uploadMark.php',
+            url: '../Requests/uploadMark.php',
             data: data
         })
         .done(function (data) {
             data = JSON.parse(data);
+            showMarks();
             stopLoading();
             Notify(data.title, data.content, data.status);
         })
@@ -329,7 +317,7 @@ let deleteMark = id => {
                 username: username,
                 id: id
             },
-            url: '../Admin/deleteMark.php'
+            url: '../Requests/deleteMark.php'
         })
         .done(function (data) {
             data = JSON.parse(data);
@@ -359,7 +347,7 @@ let uploadSubject = () => {
 
     $.post({
             data: data,
-            url: '../Admin/uploadSubject.php'
+            url: '../Requests/uploadSubject.php'
         })
         .done(function (data) {
             data = JSON.parse(data);
@@ -380,7 +368,7 @@ let periodData = () => {
     let data = {uid: username};
 
     $.get({
-            url: '../Admin/periodData.php',
+            url: '../Requests/periodData.php',
             data: data
         })
         .done(function (data) {
@@ -397,7 +385,7 @@ let sessionInfo = (id) =>{
     $.ajax({
         type: 'GET',
         data: data,
-        url: '../Admin/sessionInfo.php'
+        url: '../Requests/sessionInfo.php'
     })
     .done(function (data) {
         $('#sessionInfo-response').html(data);

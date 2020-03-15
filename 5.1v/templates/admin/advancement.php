@@ -9,7 +9,7 @@
 <div id="c_main">
 
     <div class="page_header">
-        <h3 id="admin_page_header"></h3>
+        <h3 id="admin_page_header">Mokinio pažangos apžvalga</h3>
         <div class="header_description" id="header_description">
 
         </div>
@@ -27,9 +27,7 @@
 
 <!-- Loading scripts -->
 <script>
-    $(document).ready(function () {
-        marks();
-    })
+
 </script>
 
 <?php include_once 'inc/footer.php';?>
