@@ -99,7 +99,7 @@
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="../Education/Advancement">Apžvalga</a>
+                                <a href="../Education/Analitics">Apžvalga</a>
                             </li>
                         </ol>
                     </li>

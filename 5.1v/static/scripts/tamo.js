@@ -324,6 +324,22 @@ let sessionInfo = (id) =>{
     });
 }
 
+let loadAnalitics = () =>{
+    
+    let data = {
+        s: $('#student').val(),
+        p: $('#period').val()
+    }
+
+    $.get({
+        data: data,
+        url: '../Requests/AnaliticsDetails'
+    })
+    .done(function(data) {
+        $('#analitics-response').html(data);
+    })
+}
+
 //User requests
 
 let monthInfo = [
