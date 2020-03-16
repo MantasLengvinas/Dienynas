@@ -1,6 +1,6 @@
 <?php 
-    include_once 'inc/header.php';
-    include_once 'inc/menu.php';
+    include_once '../inc/header.php';
+    include_once '../inc/menu.php';
 ?>
 
 <!-- Body section -->
@@ -30,4 +30,4 @@
 
 </script>
 
-<?php include_once 'inc/footer.php';?>
+<?php include_once '../inc/footer.php';?>

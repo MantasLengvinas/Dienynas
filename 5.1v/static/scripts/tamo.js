@@ -30,71 +30,6 @@ function Notify(title, data, type) {
 
 //Admin requests
 
-let users = () => {
-    startLoading();
-    $("#admin_page_header").html('Vartotojai');
-    $.ajax({
-        type: 'GET',
-        url: '../Requests/Users.php',
-    })
-    .done(function (data) {
-        $('#admin_content').html(data);
-        stopLoading();
-    });
-}
-
-let subjects = () => {
-    startLoading();
-    $("#admin_page_header").html('Mokomieji dalykai');
-    $.ajax({
-            type: 'GET',
-            url: '../Requests/Subjects.php',
-        })
-        .done(function (data) {
-            $('#admin_content').html(data);
-            stopLoading();
-        });
-}
-
-let sessions = () => {
-    startLoading();
-    $("#admin_page_header").html('Prisijungimai');
-    $.ajax({
-            type: 'GET',
-            url: '../Requests/Sessions.php',
-        })
-        .done(function (data) {
-            $('#admin_content').html(data);
-            stopLoading();
-        });
-}
-
-let logs = () => {
-    startLoading();
-    $("#admin_page_header").html('Žurnalas');
-    $.ajax({
-            type: 'GET',
-            url: '../Requests/Logs.php',
-        })
-        .done(function (data) {
-            $('#admin_content').html(data);
-            stopLoading();
-        });
-}
-
-let siteInfo = () => {
-    startLoading();
-    $("#admin_page_header").html('Informacija');
-    $.ajax({
-            type: 'GET',
-            url: '../Requests/siteInfo.php',
-        })
-        .done(function (data) {
-            $('#admin_content').html(data);
-            stopLoading();
-        });
-}
-
 let moreInfo = id => {
     $.ajax({
             type: 'GET',
@@ -110,20 +45,6 @@ let moreInfo = id => {
                 showModal();
             }
         })
-}
-
-let databases = () => {
-    startLoading();
-    $("#admin_page_header").html('Duomenų bazės');
-    $.ajax({
-            type: 'GET',
-            url: '../Requests/Databases.php',
-        })
-        .done(function (data) {
-            $('#admin_content').html(data);
-            showXML();
-            stopLoading();
-        });
 }
 
 let showXML = () => {
@@ -238,7 +159,7 @@ let searchUser = (value) => {
 let prepareMark = () => {
 
     let username = $("#student").val();
-    startLoading();
+    startLoading();    
 
     $.ajax({
             type: 'POST',
@@ -250,6 +171,7 @@ let prepareMark = () => {
         })
         .done(function (data) {
             $("#prepareMark-response").html(data);
+            console.log("success");
             stopLoading();
         })
 

@@ -2,7 +2,7 @@
 
 <?php
 
-$template = new Template('../templates/admin/marks.php');
+$template = new Template('../templates/admin/Education/marks.php');
 $user = new User;
 
 $template->sy = sy;

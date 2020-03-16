@@ -1,7 +1,7 @@
 <?php include_once '../config/init.php'; ?>
 
 <?php 
-    $template = new Template('../templates/admin/users.php');
+    $template = new Template('../templates/admin/User/users.php');
     $user = new User();
 
     if(empty($_GET)){

@@ -112,10 +112,10 @@
                         </div>
                         <ol id="selects">
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="users();">Vartotojai</a>
+                                <a href="../User/Users">Vartotojai</a>
                             </li>
                             <li style="position:relative" class="">
-                            <a href="javascript:void(0);" onclick="sessions();">Prisijungimai</a>
+                            <a href="../User/Sessions">Prisijungimai</a>
                             </li>
                         </ol>
                     </li>
@@ -134,7 +134,7 @@
                             </li>
 
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="logs();">Žurnalas</a>
+                                <a href="../Data/Logs">Žurnalas</a>
                             </li>
 
 
@@ -149,7 +149,7 @@
                         </div>
                         <ol id="selects">
                             <li style="position:relative" class="">
-                                <a href="javascript:void(0);" onclick="siteInfo();">Puslapio informacija</a>
+                                <a href="../Other/SiteInfo">Puslapio informacija</a>
                             </li>
 
                         </ol>

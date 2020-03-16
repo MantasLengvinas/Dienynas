@@ -2,7 +2,7 @@
 
 <?php 
 
-    $template = new Template('../templates/admin/showMarks.php');
+    $template = new Template('../templates/admin/Requests/showMarks.php');
     $m = new Mark;
     $s = new Subject;
     $username = $_GET['username'];

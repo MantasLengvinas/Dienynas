@@ -36,7 +36,6 @@
     <script src="../static/scripts/jquery.js"></script>
     <script src="../static/scripts/jquery.ui.js"></script>
     <script src="../static/scripts/tamo.js"></script>
-    <script src="../static/scripts/notifications.js"></script>
 </head>
 
 <body class="container">

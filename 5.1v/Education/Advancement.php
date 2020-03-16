@@ -2,7 +2,7 @@
 
 <?php
 
-$template = new Template('../templates/admin/advancement.php');
+$template = new Template('../templates/admin/Education/advancement.php');
 $user = new User;
 
 $template->sy = sy;

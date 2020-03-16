@@ -1,7 +1,7 @@
 <?php include_once '../config/init.php'; ?>
 
 <?php 
-    $template = new Template('../templates/admin/sessioninfo.php');
+    $template = new Template('../templates/admin/Requests/sessioninfo.php');
     $session = new Session;
     $u = new User;
 

@@ -1,7 +1,7 @@
 <?php include_once '../config/init.php'; ?>
 
 <?php 
-    $template = new Template('../templates/admin/prepareMark.php');
+    $template = new Template('../templates/admin/Requests/prepareMark.php');
     $m = new Mark;
     $s = new Subject;
 

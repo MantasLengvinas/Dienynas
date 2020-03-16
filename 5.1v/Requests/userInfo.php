@@ -3,7 +3,7 @@
 <?php 
     $id = $_GET['id'];
 
-    $template = new Template('../templates/admin/userInfo.php');
+    $template = new Template('../templates/admin/Requests/userInfo.php');
     $user = new User;
     $m = new Mark;
     $s = new Subject;
