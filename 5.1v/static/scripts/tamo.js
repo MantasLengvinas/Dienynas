@@ -15,6 +15,12 @@ function stopLoading() {
     $('html').css('opacity', '1');
 }
 
+function admin_clock() {
+    var d = new Date();
+    var n = d.toLocaleTimeString();
+    $('#admin_clock').html(n);
+};
+
 function Notify(title, data, type) {
     $('#response_title').html(title);
     if(!type){

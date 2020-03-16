@@ -80,7 +80,27 @@
     </style>
 
     <script>
+
         window.addEventListener('load', function () {
+
+            (function () {
+                function checkTime(i) {
+                    return (i < 10) ? "0" + i : i;
+                }
+
+                function startTime() {
+                    var today = new Date(),
+                        h = checkTime(today.getHours()),
+                        m = checkTime(today.getMinutes()),
+                        s = checkTime(today.getSeconds());
+                    document.getElementById('admin_clock').innerHTML = h + ":" + m + ":" + s;
+                    t = setTimeout(function () {
+                        startTime()
+                    }, 500);
+                }
+                startTime();
+            })();
+
             let loader = document.querySelector('.loader');
             let op = document.querySelector('.op');
             loader.classList.add('hidden');
@@ -94,12 +114,12 @@
                 <div class="col-md-10">
 
                     <span
-                        style="vertical-align:middle;display:table-cell;height:40px;font-size:16px;font-weight:600;padding-left:15px;"><?= $_SESSION['school'] ?></span>
+                        style="vertical-align:middle;display:table-cell;height:40px;font-size:16px;font-weight:600;padding-left:15px;">Serverio laikas: <span id="admin_clock"></span></span>
                     <div style="vertical-align:middle;display:table-cell;height:40px;padding:0 5px 0 5px;">
 
                         <div class="academic_year_section">
 
-                            <div class="academic_year"><span><?=$sy?> m.m.</span></div>
+                            <!-- <div class="academic_year"><span> m.m.</span></div> -->
                         </div>
                     </div>
 
@@ -147,7 +167,7 @@
                                             <div style="position:absolute;height:0;left:0">
                                                 <div class="c_select_options hidden auto_hide dropdown-content"
                                                     id="myDropdown" style="width:300px;"> <a href="javascript:void(0);">
-                                                        <div class="c_select_options_item active">
+                                                        <!-- <div class="c_select_options_item active">
 
 
                                                             <i class="fa fa-check fa-2x fa-fw" aria-hidden="true"></i>
@@ -158,7 +178,7 @@
                                                                 </span>
                                                                 <span class="role_details"><?= $_SESSION['school'] ?></span>
                                                             </span>
-                                                        </div>
+                                                        </div> -->
                                                     </a>
 
                                                     <a href="../Prisijungimas/logout.php" onclick="">
