@@ -18,5 +18,7 @@
         }
     }
 
+    $template->version = version;
+
     echo $template;
 ?>

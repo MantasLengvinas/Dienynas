@@ -173,10 +173,10 @@
                                                             <i class="fa fa-check fa-2x fa-fw" aria-hidden="true"></i>
                                                             <span class="role_title">
 
-                                                                <?= $_SESSION['role'] ?> <span class="role_name">
+                                                                <?// $_SESSION['role'] ?> <span class="role_name">
 
                                                                 </span>
-                                                                <span class="role_details"><?= $_SESSION['school'] ?></span>
+                                                                <span class="role_details"><?// $_SESSION['school'] ?></span>
                                                             </span>
                                                         </div> -->
                                                     </a>

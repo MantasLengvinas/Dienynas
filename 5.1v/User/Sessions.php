@@ -5,6 +5,7 @@
     $session = new Session;
 
     $template->sessions = $session->getSessions();
+    $template->version = version;
 
     echo $template;
 
