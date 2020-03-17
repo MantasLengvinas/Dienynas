@@ -41,9 +41,9 @@
                             <div class="p-2">
                                 <select class="p-2" name="period" id="period" onchange="loadAnalitics();">
                                     <option value="">Nuo mokslo metų pradžios</option>
-                                    <option value="">Šis pusmetis</option>
+                                    <!-- <option value="">Šis pusmetis</option>
                                     <option value="">Šis mėnuo</option>
-                                    <option value="">Ši savaitė</option>
+                                    <option value="">Ši savaitė</option> -->
                                 </select>
                             </div>
                         </div>

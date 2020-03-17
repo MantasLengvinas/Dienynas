@@ -121,7 +121,6 @@ let createUser = () => {
         url: '../Requests/createUser.php'
     })
     .done(function(data) {
-        users();
         data = JSON.parse(data);
         stopLoading();
         Notify(data.title, data.content, data.status);
@@ -141,7 +140,6 @@ let deleteUser = (id) => {
             url: '../Requests/deleteUser.php'
         })
         .done(function(data) {
-            users();
             data = JSON.parse(data);
             Notify(data.title, data.content, data.status);
             showModal();
@@ -328,7 +326,8 @@ let loadAnalitics = () =>{
     
     let data = {
         s: $('#student').val(),
-        p: $('#period').val()
+        p: $('#period').val(),
+        md: studyMonths
     }
 
     $.get({

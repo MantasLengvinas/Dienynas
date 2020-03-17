@@ -153,3 +153,15 @@
 [SESSION_STARTED] IP: <b>::1</b> username: <b>mantas</b> at: <i>2020-03-16 17:34:06</i>
 [SESSION_STARTED] IP: <b>::1</b> username: <b>mantas</b> at: <i>2020-03-16 17:38:35</i>
 [SESSION_STARTED] IP: <b>::1</b> username: <b>mantas</b> at: <i>2020-03-16 18:20:28</i>
+[SESSION_EXPIRED] username: <b>mantas</b> at: <i>2020-03-16 18:57:55</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>mantas</b> at: <i>2020-03-17 13:22:12</i>
+[MARK_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-03-17 14:40:40</i>
+[MARK_ADDED] for <b>181339</b> by <b>mantas</b> at: <i>2020-03-17 14:52:34</i>
+[USER_CREATED] <b>TESTUSER</b> created by <b>mantas</b> at: <i>2020-03-17 21:22:43</i>
+[USER_CREATED] <b>TESTUSER</b> created by <b>mantas</b> at: <i>2020-03-17 21:22:49</i>
+[USER_CREATED] <b>TESTUSER</b> created by <b>mantas</b> at: <i>2020-03-17 21:22:51</i>
+[USER_CREATED] <b>TESTUSER</b> created by <b>mantas</b> at: <i>2020-03-17 21:22:52</i>
+[USER_CREATED] <b>TESTUSER</b> created by <b>mantas</b> at: <i>2020-03-17 21:24:12</i>
+[USER_DELETED] <b>TESTUSER</b> by <b>mantas</b> at: <i>2020-03-17 21:25:07</i>
+[USER_DELETED] <b>TESTUSER</b> by <b>mantas</b> at: <i>2020-03-17 21:25:11</i>
+[USER_CREATED] <b>testuser</b> created by <b>mantas</b> at: <i>2020-03-17 21:26:09</i>

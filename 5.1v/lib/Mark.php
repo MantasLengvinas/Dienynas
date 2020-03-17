@@ -1,5 +1,9 @@
 <?php 
 
+class AnaliticsData {
+    public $marks, $amount;
+}
+
 class Mark{
 
     private $db;
@@ -51,6 +55,18 @@ class Mark{
         $this->db->bind('username', $username);
         $this->db->bind('month', $month);
         $this->db->bind('year', $year);
+        $this->db->execute();
+
+        $data = $this->db->getAll();
+
+        return $data;
+    }
+
+    public function monthMarksAnalitics($username, $month){
+
+        $this->db->query("SELECT AVG(mark) AS monthAVG FROM marks WHERE mark > 0 AND student_username=:username AND month=:month");
+        $this->db->bind('username', $username);
+        $this->db->bind('month', $month);
         $this->db->execute();
 
         $data = $this->db->getAll();
