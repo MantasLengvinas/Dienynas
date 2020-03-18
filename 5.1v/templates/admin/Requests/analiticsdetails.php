@@ -9,10 +9,7 @@
 
     var data = <?php echo $DataJSON ?>;
 
-    if(data.isUseable){
-        Notify("Analitika", "Mokinio pasiekimų analitika.", true);
-    }
-    else {
+    if(!data.isUseable){
         Notify("Analitika", "Mokinys neturi pažymių.", false);
     }
 
@@ -20,7 +17,7 @@
             type: 'bar',
             data: {
                 datasets: [{
-                    label: 'Per mėnesį gautų pažymių vidurkis',
+                    label: `Per ${data.desc} gautų pažymių vidurkis`,
                     data: data.monthAvg,
                     barPercentage: 0.3
                 }, {
@@ -55,7 +52,7 @@
                 },
                 title: {
                     display: true,
-                    text: "Analitika pagal mėnesius",
+                    text: `Analitika pagal ${data.title}`,
                     fontSize: 18,
                     padding: 15
                 }

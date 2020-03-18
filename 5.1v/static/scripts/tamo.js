@@ -327,6 +327,7 @@ let loadAnalitics = () =>{
     let data = {
         s: $('#student').val(),
         p: $('#period').val(),
+        t: $('#type').val(),
         md: studyMonths
     }
 

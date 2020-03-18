@@ -165,3 +165,5 @@
 [USER_DELETED] <b>TESTUSER</b> by <b>mantas</b> at: <i>2020-03-17 21:25:07</i>
 [USER_DELETED] <b>TESTUSER</b> by <b>mantas</b> at: <i>2020-03-17 21:25:11</i>
 [USER_CREATED] <b>testuser</b> created by <b>mantas</b> at: <i>2020-03-17 21:26:09</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>mantas</b> at: <i>2020-03-18 16:00:49</i>
+[SESSION_STARTED] IP: <b>::1</b> username: <b>mantas</b> at: <i>2020-03-18 16:31:36</i>

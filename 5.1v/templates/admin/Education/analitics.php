@@ -47,6 +47,16 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-md-4 d-flex flex-column" style="margin: 0 10px 0 10px;">
+                            <label>Analitikos tipas</label>
+                            <div class="p-2">
+                                <select class="p-2" name="type" id="type" onchange="loadAnalitics();">
+                                    <option value="1">Pagal mėnesius</option>
+                                    <option value="2">Pagal savaites</option>
+                                    <!-- <option value="3">Pagal dalykus</option> -->
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
